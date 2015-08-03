@@ -10,5 +10,5 @@
   <%= @item.notes %>
 </p>
 
-<%= link_to 'Edit', edit_property_item_path(@item) %> |
-<%= link_to 'Back', property_items_path %>
+<%= link_to 'Edit', edit_property_item_path(@property, @item) %> |
+<%= link_to 'Back', property_items_path(@property) %>
