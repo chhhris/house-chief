@@ -10,5 +10,23 @@
   <%= @property.address %>
 </p>
 
+<p>
+  <strong>Items:</strong>
+  <% if @property.items.blank? %>
+    No items to show.
+  <% else %>
+    <ul>
+      <% @property.items.each do |item| %>
+        <li>
+          <strong><%= item.name %></strong>
+          <br><%= item.notes %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+</p>
+
+<%= link_to 'Add Item', new_property_item_path(@property) %> |
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>
