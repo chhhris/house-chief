@@ -5,4 +5,13 @@ class Item < ActiveRecord::Base
   has_many :users, through: :item_users
   has_many :attachments
 
+  FREQUENCY = {
+    daily:      1.day.to_i,
+    weekly:     1.week.to_i,
+    monthly:    1.month.to_i,
+    quarterly:  3.months.to_i,
+    biannually: 6.months.to_i,
+    annually:   1.year.to_i
+  }.with_indifferent_access
+
 end

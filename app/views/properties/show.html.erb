@@ -19,7 +19,9 @@
       <% @property.items.each do |item| %>
         <li>
           <strong><%= item.name %></strong>
-          <br><%= item.notes %>
+          <br><strong>Notes:</strong> <%= item.notes %>
+          <br><strong>Maintenance Frequency:</strong> <%= item.frequency.titleize %>
+          <br><strong>Last Maintenance:</strong> <%= item.last_maintenance_at? ? "#{time_ago_in_words(item.last_maintenance_at)} ago" : 'Never' %>
         </li>
       <% end %>
     </ul>

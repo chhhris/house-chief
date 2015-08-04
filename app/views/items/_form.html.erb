@@ -19,6 +19,18 @@
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>
+  <div class="field">
+    <%= f.label :frequency %>
+    <select name="item[frequency]">
+      <option value="" selected="selected">Please select</option>
+      <option value="daily">Daily</option>
+      <option value="weekly">Weekly</option>
+      <option value="monthly">Monthly</option>
+      <option value="quarterly">Quarterly</option>
+      <option value="biannually">Twice per year</option>
+      <option value="annually">Annually</option>
+    </select>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
