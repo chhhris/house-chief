@@ -20,8 +20,12 @@
         <li>
           <strong><%= item.name %></strong>
           <br><strong>Notes:</strong> <%= item.notes %>
-          <br><strong>Maintenance Frequency:</strong> <%= item.frequency.titleize %>
-          <br><strong>Last Maintenance:</strong> <%= item.last_maintenance_at? ? "#{time_ago_in_words(item.last_maintenance_at)} ago" : 'Never' %>
+          <% if item.frequency? %>
+            <br><strong>Maintenance Frequency:</strong> <%= item.frequency.titleize %>
+          <% end %>
+          <% if item.last_maintenance_at? %>
+            <br><strong>Last Updated:</strong> <%= item.last_maintenance_at %>
+          <% end %>
         </li>
       <% end %>
     </ul>
