@@ -1,3 +1,96 @@
+
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">
+      <h1>Properties</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+
+  <div class="large-3 columns ">
+    <div class="panel">
+      <a href="#"><img src="http://placehold.it/300x240&text=[img]"/></a>
+      <h5><a href="#"><%= current_user.name %></a></h5>
+        <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+        <section class="section">
+          <h5 class="title"><a href="#">Section 1</a></h5>
+        </section>
+        <section class="section">
+          <h5 class="title"><a href="#">Section 2</a></h5>
+        </section>
+        <section class="section">
+          <h5 class="title"><a href="#">Section 3</a></h5>
+        </section>
+        <section class="section">
+          <h5 class="title"><a href="#">Section 4</a></h5>
+        </section>
+        <section class="section">
+          <h5 class="title"><a href="#">Section 5</a></h5>
+        </section>
+        <section class="section">
+          <h5 class="title"><a href="#">Section 6</a></h5>
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="large-9 columns">
+
+
+    <div class="row">
+      <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+      <div class="large-10 columns">
+
+        <% @properties.each do |property| %>
+          <p><strong><%= property.name %></strong> <%= property.address %></p>
+          <p>Lorem ipsum description.</p>
+          <ul class="inline-list">
+            <li><%= link_to 'Show', property %></li>
+            <li><%= link_to 'Edit', edit_property_path(property) %></li>
+            <li><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        <% end %>
+
+      </div>
+    </div>
+
+    <hr/>
+
+  </div>
+
+</div>
+
+
+
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-5 columns">
+        <p>© Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-7 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Section 1</a></li>
+          <li><a href="#">Section 2</a></li>
+          <li><a href="#">Section 3</a></li>
+          <li><a href="#">Section 4</a></li>
+          <li><a href="#">Section 5</a></li>
+          <li><a href="#">Section 6</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Properties</h1>
@@ -12,18 +105,11 @@
   </thead>
 
   <tbody>
-    <% @properties.each do |property| %>
-      <tr>
-        <td><%= property.name %></td>
-        <td><%= property.address %></td>
-        <td><%= link_to 'Show', property %></td>
-        <td><%= link_to 'Edit', edit_property_path(property) %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Property', new_property_path %>
+
