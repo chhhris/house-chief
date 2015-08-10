@@ -1,38 +1,91 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">
+      <h1><%= @property.name %></h1>
+      <p><%= @property.address %></p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
+<div class="row">
 
-<p>
-  <strong>Items:</strong>
-  <% if @property.items.blank? %>
-    No items to show.
-  <% else %>
-    <ul>
+
+  <div class="large-3 columns ">
+    <div class="panel">
+      <a href="#"><img src="http://placehold.it/300x240&text=[img]"/></a>
+      <h5><a href="#">Your Name</a></h5>
+        <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+        <section class="section">
+          <h5 class="title"><%= link_to 'Add Item', new_property_item_path(@property) %></h5>
+        </section>
+        <section class="section">
+          <h5 class="title"><%= link_to 'Edit', edit_property_path(@property) %></h5>
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="large-9 columns">
+
+    <% if @property.items.blank? %>
+      <p>Create an item or a to-do.</p>
+    <% else %>
       <% @property.items.each do |item| %>
-        <li>
-          <strong><%= item.name %></strong>
-          <br><strong>Notes:</strong> <%= item.notes %>
-          <% if item.frequency? %>
-            <br><strong>Maintenance Frequency:</strong> <%= item.frequency.titleize %>
-          <% end %>
-          <% if item.last_maintenance_at? %>
-            <br><strong>Last Updated:</strong> <%= item.last_maintenance_at %>
-          <% end %>
-        </li>
+        <div class="row">
+          <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+          <div class="large-10 columns">
+            <p><strong><%= item.name %></strong></p>
+            <p><%= item.notes %></p>
+            <% if item.frequency? || item.last_maintenance_at? %>
+              <ul class="inline-list">
+                <% if item.frequency? %>
+                  <li><strong>Maintenance Frequency:</strong> <%= item.frequency.titleize %></li>
+                <% end %>
+                <% if item.last_maintenance_at? %>
+                  <li><strong>Last Updated:</strong> <%= item.last_maintenance_at %></li>
+                <% end %>
+              </ul>
+            <% end %>
+
+            <% if item.attachments.present? %>
+              <h6>Attachments</h6>
+              <div class="row">
+                <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
+                <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+        <hr/>
       <% end %>
-    </ul>
-  <% end %>
+    <% end %>
 
-</p>
 
-<%= link_to 'Add Item', new_property_item_path(@property) %> |
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+
+  </div>
+
+</div>
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-5 columns">
+        <p>© Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-7 columns">
+        <ul class="inline-list right">
+          <li><%= link_to 'Add Item', new_property_item_path(@property) %></li>
+          <li><%= link_to 'Edit', edit_property_path(@property) %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
