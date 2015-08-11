@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :properties do
     resources :items
+    resources :users
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

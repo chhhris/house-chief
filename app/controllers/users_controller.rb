@@ -23,7 +23,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        create_property_user
+        format.html { redirect_to @property.present? ? @property : @user, notice: "#{@user.name} was successfully updated." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: "#{@user.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -64,6 +65,13 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :password)
+    end
+
+    def create_property_user
+      @property = Property.find(params[:user][:property_id])
+      if @property.present?
+        PropertyUser.create(user_id: @user.id, property_id: @property.id)
+      end
     end
 end

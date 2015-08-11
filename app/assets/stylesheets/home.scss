@@ -1,3 +1,17 @@
+.welcome-title {
+  font-size: 10vw;
+  font-weight: bold;
+}
+
+.sub-bullets {
+  font-size: 1.9vw;
+  line-height: 1.9vw;
+  li {
+    padding: 1vw;
+    background-color: rgba(131, 131, 131, 0.9);
+    color: white;
+  }
+}
 
 .background-image {
   background-image: url('tools-background-smaller.jpg');
