@@ -15,3 +15,8 @@
  *= require foundation_and_overrides
 
  */
+
+h1 {
+  font-family: 'Martel', serif;
+  font-weight: 900;
+}
