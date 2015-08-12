@@ -23,8 +23,23 @@
 }
 
 .calls-to-action {
-  position: absolute;
-  top: 5%;
+  text-align: center;
+
+  h3 {
+    margin: 50px auto 40px auto;
+    font-family: 'Knewave', cursive;
+    font-size: 3vw;
+  }
+
+  a.button {
+    margin-bottom: 40px;
+    font-size: 1.8vw;
+  }
+
+  p {
+    font-size: 1.3vw;
+    line-height: 1.7vw;
+  }
 }
 
 .welcome-splash-container {
