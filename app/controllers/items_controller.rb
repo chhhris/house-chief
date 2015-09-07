@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @item = @property.items.find_by_id(params[:id])
   end
 
   # GET /items/new

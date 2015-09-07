@@ -1,19 +1,95 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">
+      <h1><%= @property.name %></h1>
+      <p><%= @property.address %></p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @item.notes %>
-</p>
+<div class="row">
 
-<p>
-  <strong>Frequency:</strong>
-  <%= @item.frequency %>
-</p>
+  <div class="large-3 columns ">
+    <div class="panel">
+      <a href="#"><img src="http://placehold.it/300x240&text=[img]"/></a>
+      <h5>Welcome, <%= current_user.name %></h5>
+        <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+        <section class="section">
+          <h5 class="title"><%= link_to 'Add an item', new_property_item_path(@property) %></h5>
+        </section>
+        <section class="section">
+          <h5 class="title"><%= link_to 'Send an invite', new_property_user_path(@property) %></h5>
+        </section>
+        <section class="section">
+          <h5 class="title"><%= link_to 'Edit this page', edit_property_item_path(@property, @item) %></h5>
+        </section>
+      </div>
 
-<%= link_to 'Edit', edit_property_item_path(@property, @item) %> |
-<%= link_to 'Back', property_items_path(@property) %>
+    </div>
+  </div>
+
+  <div class="large-9 columns">
+
+    <div class="row">
+      <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+      <div class="large-10 columns">
+        <div class="row">
+          <div class="large-12 columns">
+            <h2><strong><%= @item.name %></strong></h2>
+            <p><%= @item.notes %></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <% if @item.frequency? %>
+              <p><strong>Maintenance Frequency:</strong> <%= @item.frequency.titleize %></p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <form>
+            <div class="large-3 columns">
+              <p><label for="updated-at" class="datepicker"><strong>Last Updated:</strong></label></p>
+            </div>
+            <div class="large-3 columns end">
+              <input type="text" id="updated-at" class="datepicker" placeholder="Select date" value="<%= @item.last_maintenance_at %>">
+            </div>
+          </form>
+        </div>
+
+        <% if @item.attachments.present? %>
+          <h6>Attachments</h6>
+          <div class="row">
+            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
+            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-5 columns">
+        <p>© Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-7 columns">
+        <ul class="inline-list right">
+          <li><%= link_to 'Add an item', new_property_item_path(@property) %></li>
+          <li><%= link_to 'Edit this page', edit_property_path(@property) %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<%= javascript_include_tag 'javascript/properties.js' %>
