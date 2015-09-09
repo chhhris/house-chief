@@ -20,18 +20,25 @@
     <%= f.text_area :notes %>
   </div>
   <div class="field">
-    <%= f.label :frequency %>
-    <select name="item[frequency]">
-      <option value="" selected="selected">Please select</option>
-      <option value="daily">Daily</option>
-      <option value="weekly">Weekly</option>
-      <option value="monthly">Monthly</option>
-      <option value="quarterly">Quarterly</option>
-      <option value="biannually">Twice per year</option>
-      <option value="annually">Annually</option>
-    </select>
+  <%= f.label :last_maintenance_at %>
+  <input type="text" for="last_maintenance_at" class="datepicker" placeholder="Click here to select date" value="<%= @item.last_maintenance_at %>">
+  </div>
+  <div class="field">
+    <label for="item_frequency">Frequency <i>(Optional)</i>
+      <select name="item[frequency]">
+        <option value="" selected="selected">Please select</option>
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+        <option value="quarterly">Quarterly</option>
+        <option value="biannually">Twice per year</option>
+        <option value="annually">Annually</option>
+      </select>
+    </label>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create item', class: 'button' %>
   </div>
 <% end %>
+
+<%= javascript_include_tag 'javascript/properties.js' %>
