@@ -50,7 +50,7 @@
                   <li><strong>Maintenance Frequency:</strong> <%= item.frequency.titleize %></li>
                 <% end %>
                 <% if item.last_maintenance_at? %>
-                  <li><strong>Last Updated:</strong> <%= item.last_maintenance_at %></li>
+                  <li><strong>Last maintained:</strong> <%= item.last_maintenance_at.strftime('%B %Y') %></li>
                 <% end %>
               </ul>
             <% end %>

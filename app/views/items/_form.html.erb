@@ -21,7 +21,7 @@
   </div>
   <div class="field">
   <%= f.label :last_maintenance_at %>
-  <input type="text" for="last_maintenance_at" class="datepicker" placeholder="Click here to select date" value="<%= @item.last_maintenance_at %>">
+  <input type="text" for="last_maintenance_at" name="item[last_maintenance_at]" class="datepicker" placeholder="Click here to select date" value="<%= @item.last_maintenance_at %>">
   </div>
   <div class="field">
     <label for="item_frequency">Frequency <i>(Optional)</i>
@@ -37,8 +37,8 @@
     </label>
   </div>
   <div class="actions">
-    <%= f.submit 'Create item', class: 'button' %>
+    <%= f.submit @item.new_record? ? 'Create item' : 'Update item', class: 'button' %>
   </div>
 <% end %>
 
-<%= javascript_include_tag 'javascript/properties.js' %>
+<%= javascript_include_tag '/properties.js' %>
