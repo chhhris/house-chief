@@ -1,15 +1,20 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_property, only: [:new, :create, :index]
 
   # GET /users/1
   # GET /users/1.json
   def show
   end
 
+  def index
+    @users = @property.users
+  end
+
   # GET /users/new
   def new
-    @user = User.new
+    @user = @property.users.new
   end
 
   # GET /users/1/edit
@@ -19,7 +24,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = @property.users.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -61,6 +66,10 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def set_property
+      @property = Property.find(params[:property_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
