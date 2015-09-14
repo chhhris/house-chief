@@ -28,13 +28,19 @@
 
   <div class="large-5 columns end">
     <div class="row">
-      <h2>Send an invite</h2>
+      <h2>Add a user <%= "to #{@property.name}" if @property.present? %></h2>
+      <% if @property.present? %>
+        <div class="alert">
+          <p>Note: This action will add the user as an admin to the <%= @property.name %> property.</p>
+          <p>You can add or invite a service provider (e.g. electrician, plumber, contractor) on the <a href-"#">Service Providers page</a>.</p>
+        </div>
+      <% end %>
     </div>
 
     <%= render 'form' %>
 
     <div class="row">
-      <%= link_to 'Back', users_path %>
+      <%= link_to 'Back', @property.present? ? property_path(@property) : properties_path %>
     </div>
   </div>
 

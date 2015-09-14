@@ -37,8 +37,8 @@
             <p>Members: <%= property.users.pluck(:name).join(", ") %></p>
           <% end %>
           <ul class="inline-list">
-            <li><%= link_to 'Show', property %></li>
-            <li><%= link_to 'Edit', edit_property_path(property) %></li>
+            <li><%= link_to 'View property', property %></li>
+            <li><%= link_to 'Edit property', edit_property_path(property) %></li>
           </ul>
 
         </div>

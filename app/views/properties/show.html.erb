@@ -38,7 +38,7 @@
         <div class="row">
           <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
           <div class="large-10 columns">
-            <p><a href="<%= property_item_path(@property, item) %>"><strong><%= item.name %></strong></a></p>
+            <p><a href="<%= property_item_path(@property, item) %>"><strong><%= item.name %></strong></a> (<a href="<%= property_item_path(@property, item) %>">View item</a>)</p>
             <p><%= item.notes %></p>
             <% if item.frequency? || item.last_maintenance_at? %>
               <ul class="inline-list">
