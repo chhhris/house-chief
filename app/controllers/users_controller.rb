@@ -76,7 +76,7 @@ class UsersController < ApplicationController
   end
 
   def find_or_create_property_user
-    PropertyUser.find_or_create_by(user_id: @user.id, property_id: @property.id)
+    PropertyUser.find_or_create_by(user_id: @user.id, property_id: @property.id, admin: true)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
