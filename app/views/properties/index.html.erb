@@ -9,20 +9,7 @@
 <div class="row">
 
   <div class="large-3 columns ">
-    <div class="panel">
-      <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-        <section class="section">
-          <h5 class="title"><%= link_to 'Add a new property', new_property_path %></h5>
-        </section>
-        <section class="section">
-          <h5 class="title"><a href="#">Section 2</a></h5>
-        </section>
-        <section class="section">
-          <h5 class="title"><a href="#">Section 3</a></h5>
-        </section>
-      </div>
-
-    </div>
+    <%= render partial: 'shared/menu' %>
   </div>
 
   <div class="large-9 columns">

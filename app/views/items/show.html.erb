@@ -10,20 +10,7 @@
 <div class="row">
 
   <div class="large-3 columns ">
-    <div class="panel">
-      <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-        <section class="section">
-          <h5 class="title"><%= link_to 'Add an item', new_property_item_path(@property) %></h5>
-        </section>
-        <section class="section">
-          <h5 class="title"><%= link_to 'Send an invite', new_property_user_path(@property) %></h5>
-        </section>
-        <section class="section">
-          <h5 class="title"><%= link_to 'Edit this item', edit_property_item_path(@property, @item) %></h5>
-        </section>
-      </div>
-
-    </div>
+    <%= render partial: 'shared/menu' %>
   </div>
 
   <div class="large-9 columns">

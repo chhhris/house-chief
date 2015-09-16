@@ -66,6 +66,16 @@
   }
 }
 
+.menu {
+  .actions-links {
+    padding-left: 5px;
+  }
+  .actions-header {
+    text-transform: uppercase;
+    font-family: 'Martel', serif;
+  }
+}
+
 .background-image {
   background-image: url('tools-background-smaller.jpg');
   top: 0;
