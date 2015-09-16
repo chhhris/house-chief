@@ -22,8 +22,9 @@ protected
   end
 
   def set_property
-    property_id = params.key?(:user) ? params[:user][:property_id] : params[:property_id]
-    @property =  Property.find(property_id)
+    resource    = params[:controller].classify.underscore.downcase.to_sym
+    property_id = params.key?(:property_id) ? params[:property_id] : params[resource][:property_id]
+    @property   = Property.find(property_id)
   end
 
 end

@@ -1,2 +1,45 @@
-<h1>ServiceProviders#new</h1>
-<p>Find me in app/views/service_providers/new.html.erb</p>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">
+      <h1><%= @property.name %></h1>
+      <p><%= @property.address %></p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="large-3 columns ">
+    <%= render partial: 'shared/menu' %>
+  </div>
+
+  <div class="large-5 columns end">
+    <div class="row">
+      <h2>Add a service provider to <%= @property.name %></h2>
+    </div>
+
+    <%= render 'form' %>
+
+    <div class="row">
+      <%= link_to 'Back', property_path(@property) %>
+    </div>
+  </div>
+
+</div>
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-5 columns">
+        <p>© Copyright 2015 House Chief</p>
+      </div>
+      <div class="large-7 columns">
+        <ul class="inline-list right">
+          <li><%= link_to 'Add an item', new_property_item_path(@property) %></li>
+          <li><%= link_to 'Property settings', edit_property_path(@property) %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

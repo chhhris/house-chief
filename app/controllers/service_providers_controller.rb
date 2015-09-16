@@ -12,7 +12,7 @@ class ServiceProvidersController < ApplicationController
 
     respond_to do |format|
       if @service_provider.save
-        format.html { redirect_to @service_provider, notice: "#{@service_provider.name} was successfully created." }
+        format.html { redirect_to property_service_provider_path(@property, @service_provider), notice: "#{@service_provider.name} was successfully created." }
         format.json { render :show, status: :created, location: @service_provider }
       else
         format.html { render :new }
@@ -60,6 +60,6 @@ private
   end
 
   def service_provider_params
-    params.require(:user).permit(:name, :property_id)
+    params.require(:service_provider).permit(:name, :property_id)
   end
 end

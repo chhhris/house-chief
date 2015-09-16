@@ -1,2 +1,60 @@
-<h1>ServiceProviders#show</h1>
-<p>Find me in app/views/service_providers/show.html.erb</p>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">
+      <h1><%= @property.name %></h1>
+      <p><%= @property.address %></p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="large-3 columns ">
+    <%= render partial: 'shared/menu' %>
+  </div>
+
+  <div class="large-9 columns">
+
+    <% if @property.service_providers.blank? %>
+      <p>You haven't added any service providers yet. <a href="<%= new_property_service_provider_path(@property) %>">Add one.</a></p>
+    <% else %>
+      <% @property.service_providers.each do |service_provider| %>
+        <div class="row">
+          <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+          <div class="large-10 columns">
+            <p><strong><%= service_provider.name %></strong> (<a href="<%= property_service_provider_path(@property, service_provider) %>">full view</a>)</p>
+            <% if service_provider.description.present? %>
+              <p><%= service_provider.description %></p>
+            <% end %>
+            <% if service_provider.phone.present? %>
+              <p><%= service_provider.phone %></p>
+            <% end %>
+            <% if service_provider.address.present? %>
+              <p><%= service_provider.address %></p>
+            <% end %>
+          </div>
+        </div>
+        <hr/>
+      <% end %>
+    <% end %>
+
+  </div>
+
+</div>
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-5 columns">
+        <p>© Copyright House Chief 2015</p>
+      </div>
+      <div class="large-7 columns">
+        <ul class="inline-list right">
+          <li><%= link_to 'Add an item', new_property_item_path(@property) %></li>
+          <li><%= link_to 'Property settings', edit_property_path(@property) %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

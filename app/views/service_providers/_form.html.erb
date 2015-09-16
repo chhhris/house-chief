@@ -1,0 +1,43 @@
+<%= form_for(@service_provider) do |f| %>
+  <% if @service_provider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service_provider.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @service_provider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_field :description %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="actions">
+      <%= f.submit 'Create', class: 'button' %>
+    </div>
+  </div>
+  <%= f.hidden_field :property_id, value: params[:property_id] %>
+<% end %>
