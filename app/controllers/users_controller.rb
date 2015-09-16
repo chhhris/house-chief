@@ -70,11 +70,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def set_property
-    property_id = params.key?(:user) ? params[:user][:property_id] : params[:property_id]
-    @property =  Property.find(property_id)
-  end
-
   def find_or_create_property_user
     PropertyUser.find_or_create_by(user_id: @user.id, property_id: @property.id, admin: true)
   end

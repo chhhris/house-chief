@@ -21,4 +21,9 @@ protected
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
   end
 
+  def set_property
+    property_id = params.key?(:user) ? params[:user][:property_id] : params[:property_id]
+    @property =  Property.find(property_id)
+  end
+
 end
