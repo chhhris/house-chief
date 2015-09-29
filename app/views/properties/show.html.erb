@@ -16,10 +16,10 @@
 
   <div class="large-9 columns">
 
-    <% if @property.items.blank? %>
+    <% if @items.blank? %>
       <p>Create an item or a to-do.</p>
     <% else %>
-      <% @property.items.each do |item| %>
+      <% @items.each do |item| %>
         <%= render partial: 'item', locals: {item: item} %>
       <% end %>
     <% end %>
