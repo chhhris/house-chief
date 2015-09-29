@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "House Chief" %></title>
-    <link href='http://fonts.googleapis.com/css?family=Martel:900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -14,9 +13,11 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <p id="notice"><%= notice %></p>
-    <% end %>
-    <%= yield %>
+    <div class="background-image">
+      <% if flash[:notice] %>
+        <p id="notice"><%= notice %></p>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

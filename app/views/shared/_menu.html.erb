@@ -1,24 +1,8 @@
-<div class="menu panel">
-  <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-
-    <% if @property.present? %>
-      <section class="section">
-       <h4 class="actions-header">Actions</h4>
-      </section>
-      <div class="actions-links">
-        <section class="section">
-          <h5 class="title"><%= link_to 'Add item or task', new_property_item_path(@property) %></h5>
-        </section>
-        <section class="section">
-          <h5 class="title"><%= link_to 'New service contact', new_property_service_provider_path(@property) %></h5>
-        </section>
-        <section class="section">
-          <h5 class="title"><%= link_to 'Add property admins', new_property_user_path(@property) %></h5>
-        </section>
-        <section class="section">
-          <h5 class="title"><%= link_to 'Edit property settings', edit_property_path(@property) %></h5>
-        </section>
-      </div>
-    <% end %>
-  </div>
-</div>
+<% if @property.present? %>
+  <ul class="inline-list">
+    <li><%= link_to 'New Note', new_property_item_path(@property) %></li>
+    <li><%= link_to 'Add Contact', new_property_service_provider_path(@property) %></li>
+    <li><%= link_to 'Add Property Mgr', new_property_user_path(@property) %></li>
+    <li><%= link_to 'Property Settings', edit_property_path(@property) %></li>
+  </ul>
+<% end %>

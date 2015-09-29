@@ -1,4 +1,31 @@
+.property {
+  background-color: white;
+}
 
+.header-panel {
+  overflow: auto;
+  position: relative;
+
+  h1 {
+    display: inline;
+    padding-right: 5px;
+  }
+
+  .subtitle {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .inline-list {
+    float: right;
+  }
+
+  .header-actions {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+  }
+}
 
 .item-title {
   font-size: 2em;

@@ -72,19 +72,8 @@
   }
   .actions-header {
     text-transform: uppercase;
-    font-family: 'Martel', serif;
+    font-family: monospace, serif;
   }
-}
-
-.background-image {
-  background-image: url('tools-background-smaller.jpg');
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  margin: none !important;
-  max-width: none !important;
 }
 
 .transparency {
