@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+  <div class="large-10 columns">
+    <p class="item-title"><a href="<%= property_item_path(@property, item) %>"><strong><%= item.name %></strong></a></p>
+    <%# if item.frequency? || item.last_maintenance_at? %>
+      <ul class="inline-list">
+        <li class="item-notes"><%= item.notes %></li>
+        <% if item.last_maintenance_at? %>
+          <li class="pull-right"><strong>Last update:</strong> <%= item.last_maintenance_at.strftime('%B %Y') %></li>
+        <% end %>
+        <% if item.frequency? %>
+          <li class="pull-right"><strong>Frequency:</strong> <%= item.frequency.titleize %></li>
+        <% end %>
+      </ul>
+    <%# end %>
+
+    <% if item.attachments.present? %>
+      <h6>Attachments</h6>
+      <div class="row">
+        <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
+        <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+<hr/>

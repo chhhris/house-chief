@@ -14,10 +14,9 @@
   </head>
 
   <body>
-    <div class="row">
+    <% if flash[:notice] %>
       <p id="notice"><%= notice %></p>
-    </div>
+    <% end %>
     <%= yield %>
-
   </body>
 </html>

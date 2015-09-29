@@ -1,7 +1,11 @@
-<h2> House Chief | Login</h2>
+<h2> House Chief | Login | Devise</h2>
 
 <div class="row">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <% if flash[:alert] %>
+      <span> <%= flash[:alert] %></span>
+    <% end %>
+    <%= devise_error_messages! %>
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true %>

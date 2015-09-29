@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = @property.items
   end
 
   # GET /items/1
@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @property, notice: 'Item was successfully created.' }
+        format.html { redirect_to @property, notice: "#{@item.name} was successfully created." }
         format.json { render :show, status: :created, location: @property }
       else
         format.html { render :new }
