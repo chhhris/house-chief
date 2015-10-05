@@ -1,18 +1,12 @@
 <div class="row">
-  <div class="large-12 columns">
-    <div class="panel">
-      <h1>Your properties</h1>
-    </div>
+  <div class="panel">
+    <h1>Your properties</h1>
   </div>
 </div>
 
 <div class="row">
 
-  <div class="large-3 columns ">
-    <%= render partial: 'shared/menu' %>
-  </div>
-
-  <div class="large-9 columns">
+  <div class="large-offset-1 large-10 columns end">
 
     <% @properties.each do |property| %>
       <div class="row">

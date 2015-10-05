@@ -1,3 +1,6 @@
+.splash {
+  height: 800px;
+}
 .welcome-title {
   font-size: 10vw;
   font-weight: bold;
@@ -8,8 +11,9 @@
 }
 
 .welcome-sidebar {
+  float: left;
+  width: 30%;
   background-color: white;
-  position: relative;
   height: 250px;
 }
 
@@ -43,7 +47,8 @@
 }
 
 .welcome-splash-container {
-  position: absolute;
+  float: right;
+  width: 70%;
   top: 17%;
 }
 
@@ -79,4 +84,8 @@
 .transparency {
   background-color: rgba(255, 255, 255, 0.7);
   height: 100%;
+}
+
+.footer-content {
+  margin-top: 20px;
 }
