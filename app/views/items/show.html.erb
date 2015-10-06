@@ -36,17 +36,16 @@
           </div>
         </div>
 
-        <div class="row">
-          <form>
+        <% if @item.last_maintenance_at %>
+          <div class="row">
             <div class="large-3 columns">
-              <p><label for="updated-at" class="datepicker"><strong>Last updated:</strong></label></p>
+              <p><strong>Last updated:</strong></p>
             </div>
             <div class="large-4 columns end">
-              <input type="text" id="updated-at" class="datepicker" placeholder="Select date" value="<%= @item.last_maintenance_at.strftime('%B %Y') %>">
-              <a href="#" class="button small">Save date</a>
+              <%= @item.last_maintenance_at.strftime('%B %Y') %>
             </div>
-          </form>
-        </div>
+          </div>
+        <% end %>
 
         <% if @item.attachments.present? %>
           <h6>Attachments</h6>

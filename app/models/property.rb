@@ -10,6 +10,8 @@ class Property < ActiveRecord::Base
 
   after_create :create_property_user_on_creator
 
+  MONTHS = %w(January February March April May June July August September October November December)
+
 private
 
   def create_property_user_on_creator

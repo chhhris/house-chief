@@ -10,31 +10,59 @@
       </ul>
     </div>
   <% end %>
+  <div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_area :name %>
   </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
+  <div class="row first-row">
+    <div class="columns large-12">
+      <%= f.label :name %><br>
+      <%= f.text_area :name %>
+    </div>
   </div>
-  <div class="field">
-  <%= f.label :last_maintenance_at %>
-  <input type="text" for="last_maintenance_at" name="item[last_maintenance_at]" class="datepicker" placeholder="Click here to select date" value="<%= @item.last_maintenance_at %>">
+
+  <div class="row">
+    <div class="columns large-12">
+      <%= f.label :notes %><br>
+      <%= f.text_area :notes %>
+    </div>
   </div>
-  <div class="field">
-    <label for="item_frequency">Frequency <i>(Optional)</i>
-      <select name="item[frequency]">
-        <option value="" selected="selected">Please select</option>
-        <option value="daily">Daily</option>
-        <option value="weekly">Weekly</option>
-        <option value="monthly">Monthly</option>
-        <option value="quarterly">Quarterly</option>
-        <option value="biannually">Twice per year</option>
-        <option value="annually">Annually</option>
+
+  <div class="row">
+    <div class="columns large-12">
+      <%= f.label :last_maintenance_at %>
+      <br/>
+    </div>
+    <div class="columns large-6">
+      <select name="item[last_maintenance_at][month]">
+        <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Please select</option>
+        <%= Property::MONTHS.each do |month| %>
+          <option value="<%= month %>" <%= 'selected' if @item.last_maintenance_at && @item.last_maintenance_at.strftime('%B') == month %>><%= month %></option>
+        <% end %>
       </select>
-    </label>
+    </div>
+    <div class="columns large-6">
+      <select name="item[last_maintenance_at][year]">
+        <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Please select</option>
+        <%= (1990..Time.now.year).to_a.reverse.each do |year| %>
+          <option value="<%= year %>" <%= 'selected' if @item.last_maintenance_at && @item.last_maintenance_at.strftime('%Y') == year %>><%= year %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="columns large-12">
+      <label for="item_frequency">Frequency <i>(Optional)</i>
+        <select name="item[frequency]">
+          <option value="" selected="selected">Please select</option>
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+          <option value="quarterly">Quarterly</option>
+          <option value="biannually">Twice per year</option>
+          <option value="annually">Annually</option>
+        </select>
+      </label>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit @item.new_record? ? 'Create item' : 'Update item', class: 'button' %>
