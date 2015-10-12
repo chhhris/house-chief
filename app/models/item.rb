@@ -5,6 +5,8 @@ class Item < ActiveRecord::Base
   has_many :users, through: :item_users
   has_many :attachments
 
+  mount_uploaders :attachment, AttachmentUploader
+
   FREQUENCY = {
     daily:      1.day.to_i,
     weekly:     1.week.to_i,

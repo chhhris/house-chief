@@ -40,6 +40,8 @@ gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem "mini_magick"
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 group :development, :test do
   gem 'better_errors'
