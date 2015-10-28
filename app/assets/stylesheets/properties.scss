@@ -32,6 +32,17 @@
   padding-top: 30px;
 }
 
+.item-thumbnail-container {
+  position: relative;
+  padding-right: 0;
+  padding-top: 15px;
+}
+
+.item-thumbnail {
+  margin: auto;
+  display: block;
+}
+
 .item-title {
   font-size: 2em;
 }

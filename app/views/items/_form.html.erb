@@ -66,16 +66,16 @@
   </div>
   <div class="row">
     <div class="columns large-12">
-      <% if @item.attachments? %>
-        <% @item.attachments.each do |attachment| %>
-          <%= image_tag(attachment.url) %>
-          <%= f.label :remove_attachment %>
-          <%= f.check_box :remove_attachment %>
-        <% end %>
-      <% end %>
+      <%# if @item.attachments? %>
+        <%# @item.attachments.each do |attachment| %>
+          <%# image_tag(attachment.url) %>
+          <%# f.label :remove_attachment %>
+          <%# f.check_box :remove_attachment %>
+        <%# end %>
+      <%# end %>
       <%= f.label :attachments %><br>
-      <%= f.file_field :attachments, mulitple: true %>
-      <%= f.hidden_field :attachments_cache %>
+      <%= f.file_field :attachments, multiple: true %>
+      <%# f.hidden_field :attachments_cache %>
     </div>
   </div>
   <div class="actions">

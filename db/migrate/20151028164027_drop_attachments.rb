@@ -1,5 +1,9 @@
-class CreateAttachments < ActiveRecord::Migration
-  def change
+class DropAttachments < ActiveRecord::Migration
+  def up
+    drop_table :attachments
+  end
+
+  def down
     create_table :attachments do |t|
       t.text :attachment_url
       t.string :attachment_type

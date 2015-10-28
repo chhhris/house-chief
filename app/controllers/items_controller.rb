@@ -75,7 +75,12 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params[:item][:last_maintenance_at] = Time.parse("#{params[:item][:last_maintenance_at][:month]} #{params[:item][:last_maintenance_at][:year]}").to_s
+      format_last_maintenance_at
       params.require(:item).permit(:name, :notes, :frequency, :last_maintenance_at, {attachments: []})
+    end
+
+    def format_last_maintenance_at
+      return unless params[:item][:last_maintenance_at][:month].present?
+      params[:item][:last_maintenance_at] = Time.parse("#{params[:item][:last_maintenance_at][:month]} #{params[:item][:last_maintenance_at][:year]}").to_s
     end
 end

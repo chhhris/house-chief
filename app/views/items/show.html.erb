@@ -1,26 +1,24 @@
 <div class="row">
-  <div class="large-3 columns">
-    <div class="panel">
-      <h1><%= @property.name %></h1>
-      <p><%= @property.address %></p>
+  <div class="panel header-panel">
+    <div class="large-4 columns">
+      <h1><%= @property.name %></h1><span class="subtitle"><%= @property.address %></span>
     </div>
-  </div>
-  <div class="large-9 columns">
-
+    <div class="large-8 columns header-actions">
+      <%= render partial: 'shared/menu' %>
+    </div>
   </div>
 </div>
 
+
 <div class="row">
 
-  <div class="large-3 columns ">
-    <%= render partial: 'shared/menu' %>
-  </div>
-
-  <div class="large-9 columns">
+  <div class="large-12 columns">
 
     <div class="row">
-      <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
-      <div class="large-10 columns">
+      <div class="large-1 columns small-3 item-thumbnail-container">
+        <img src="https://s3-us-west-1.amazonaws.com/housechief-assets/notebook.png" class="item-thumbnail"/>
+      </div>
+      <div class="large-11 columns">
         <div class="row">
           <div class="large-12 columns">
             <h2><strong><%= @item.name %></strong></h2>
@@ -50,8 +48,8 @@
         <% if @item.attachments.present? %>
           <h6>Attachments</h6>
           <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
-            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+            <div class="large-3 columns small-3"><%= image_tag @item.attachments[0].url %></div>
+            <div class="large-9 columns"><p>Pic</p></div>
           </div>
         <% end %>
 
@@ -61,21 +59,6 @@
 
 </div>
 
-<footer class="row">
-  <div class="large-12 columns">
-    <hr/>
-    <div class="row">
-      <div class="large-5 columns">
-        <p>© Copyright no one at all. Go to town.</p>
-      </div>
-      <div class="large-7 columns">
-        <ul class="inline-list right">
-          <li><%= link_to 'Add an item', new_property_item_path(@property) %></li>
-          <li><%= link_to 'Edit this item', edit_property_item_path(@property, @item) %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+<%= render partial: 'shared/footer' if @property %>
 
 <%= javascript_include_tag 'properties' %>
