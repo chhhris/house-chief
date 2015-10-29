@@ -66,13 +66,23 @@
   </div>
   <div class="row">
     <div class="columns large-12">
-      <%# if @item.attachments? %>
-        <%# @item.attachments.each do |attachment| %>
-          <%# image_tag(attachment.url) %>
-          <%# f.label :remove_attachment %>
-          <%# f.check_box :remove_attachment %>
-        <%# end %>
-      <%# end %>
+      <% if @item.attachments? %>
+        <div class="row">
+          <% attachment_count = @item.attachments.count %>
+          <% @item.attachments.each_with_index do |attachment, index| %>
+            <div class="columns large-4 <%= 'end' if attachment_count == (index + 1) %>">
+              <label for="remove_attachment">Remove file:
+                <input type="hidden" name="remove_attachment" value="0" selected>
+                <input type="checkbox" name="remove_attachment" value="1">
+              </label>
+              <div style="padding:10px;">
+                <!-- TODO if PDF add PDF thumbnail placeholder -->
+                <%= image_tag(attachment.url) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
       <%= f.label :attachments %><br>
       <%= f.file_field :attachments, multiple: true %>
       <%# f.hidden_field :attachments_cache %>

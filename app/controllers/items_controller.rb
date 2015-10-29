@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_property
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :format_last_maintenance_at, only: [:create, :update]
+  before_action :process_attachments, only: [:update]
 
   # GET /items
   # GET /items.json
@@ -45,7 +47,7 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @property, notice: 'Item was successfully updated.' }
+        format.html { redirect_to @property, notice: "#{@item.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @property }
       else
         format.html { render :edit }
@@ -75,12 +77,16 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      format_last_maintenance_at
       params.require(:item).permit(:name, :notes, :frequency, :last_maintenance_at, {attachments: []})
     end
 
     def format_last_maintenance_at
       return unless params[:item][:last_maintenance_at][:month].present?
       params[:item][:last_maintenance_at] = Time.parse("#{params[:item][:last_maintenance_at][:month]} #{params[:item][:last_maintenance_at][:year]}").to_s
+    end
+
+    def process_attachments
+      return unless params[:item][:attachments].present?
+      attachments = params[:item].delete(:attachments)
     end
 end
