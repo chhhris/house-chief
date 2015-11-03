@@ -18,3 +18,19 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+function init() {
+  hideFlashMsg();
+}
+
+function hideFlashMsg() {
+  var flashDiv = $('div.flash');
+
+  if (flashDiv.length > 0) {
+    flashDiv.delay( 1800 ).fadeOut( 800 );
+  }
+}
+
+$(document).ready(function() {
+  init();
+});

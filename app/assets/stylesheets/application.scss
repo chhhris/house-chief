@@ -33,13 +33,16 @@ h1 {
 }
 
 .flash {
-  padding: 20px;
+  padding: 30px;
   background-color: white;
   font-size: 20px;
   color: brown;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
 }
 .background-image {
-  background-image: url('https://s3-us-west-1.amazonaws.com/housechief-assets/tools-background-smaller.jpg');
+  background-image: image-url('tools-background-smaller.jpg');
   min-height: 800px;
 }
 

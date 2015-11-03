@@ -1,4 +1,5 @@
-# CarrierWave.configure do |config|
+CarrierWave.configure do |config|
+  config.remove_previously_stored_files_after_update = false
 #   config.fog_provider = 'fog/aws'                        # required
 #   config.fog_credentials = {
 #     provider:              'AWS',                        # required
@@ -11,4 +12,4 @@
 #   config.fog_directory  = 'housechief-assets'                          # required
 #   # config.fog_public     = false                                        # optional, defaults to true
 #   # config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
-# end
+end

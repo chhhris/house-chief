@@ -47,6 +47,7 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
+        preserve_existing_attachments_hack if @existing_attachment_files.present?
         format.html { redirect_to @property, notice: "#{@item.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @property }
       else
@@ -77,7 +78,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :notes, :frequency, :last_maintenance_at, {attachments: []})
+      @item_params = params.require(:item).permit(:name, :notes, :frequency, :last_maintenance_at, {attachments: []})
     end
 
     def format_last_maintenance_at
@@ -86,7 +87,11 @@ class ItemsController < ApplicationController
     end
 
     def process_attachments
-      return unless params[:item][:attachments].present?
-      attachments = params[:item].delete(:attachments)
+      return unless params[:item][:attachments].present? && @item.attachments.present?
+      @existing_attachment_files = @item.attachments.map(&:file)
+    end
+
+    def preserve_existing_attachments_hack
+      @item.update_attribute(:attachments, @item.attachments.map(&:file).push(@existing_attachment_files).flatten)
     end
 end
