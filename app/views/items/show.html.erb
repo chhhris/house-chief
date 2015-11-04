@@ -44,13 +44,13 @@
             </div>
           </div>
         <% end %>
-        <% item_attachments_count = @item.attachments.size %>
+        <% item_attachments_count = @item_attachments.size %>
         <% if item_attachments_count > 0 %>
           <h6>Attachments</h6>
           <div class="row">
-            <% @item.attachments.each_with_index do |attachment, index| %>
+            <% @item_attachments.each_with_index do |item_attachment, index| %>
               <% last_attachment = item_attachments_count == (index + 1) %>
-              <div class="large-6 columns small-6 <%= 'end' if last_attachment %>"><%= image_tag attachment.url %></div>
+              <div class="large-6 columns small-6 <%= 'end' if last_attachment %>"><%= image_tag item_attachment.file.url %></div>
             <% end %>
           </div>
         <% end %>

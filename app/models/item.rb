@@ -1,10 +1,9 @@
 class Item < ActiveRecord::Base
 
   belongs_to :property
+  has_many :item_attachments
   has_many :item_users
   has_many :users, through: :item_users
-
-  mount_uploaders :attachments, AttachmentUploader
 
   FREQUENCY = {
     daily:      1.day.to_i,
