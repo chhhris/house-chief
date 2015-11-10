@@ -43,7 +43,7 @@ gem 'puma'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem 'asset_sync'
+# gem 'asset_sync'
 
 group :development, :test do
   gem 'better_errors'
