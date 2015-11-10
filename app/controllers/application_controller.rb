@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def default_url_options
-    { host: Rails.env == 'development' ? 'localhost:3000' : 'housechief.com' }
+    { host: Rails.env.production? ? 'www.housechief.com' : 'localhost' }
   end
 
   def mailer_set_url_options

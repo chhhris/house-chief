@@ -1,4 +1,4 @@
-<% if @property.present? %>
+<% if @property.persisted? %>
   <ul class="inline-list">
     <li><%= link_to 'New Note', new_property_item_path(@property) %></li>
     <li><%= link_to 'Add Contact', new_property_service_provider_path(@property) %></li>

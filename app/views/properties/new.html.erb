@@ -1,7 +1,24 @@
-<h1>Add a new property</h1>
-<div class="row">
-  <%= render 'form' %>
-</div>
-<div class="row">
-  <%= link_to 'Back', properties_path %>
+<div class="row listing-shadow">
+  <div class="row">
+    <div class="panel header-panel">
+      <div class="large-5 columns">
+        <h1>Add a new property</h1>
+      </div>
+      <div class="large-7 columns header-actions">
+        <%= render partial: 'shared/menu' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row listing-shadow">
+    <div class="columns large-12">
+      <%= render 'form' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columns large-12">
+      <%= link_to 'Back', properties_path %>
+    </div>
+  </div>
 </div>
