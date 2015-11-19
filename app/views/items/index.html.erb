@@ -1,6 +1,6 @@
 <div class="row">
   <!-- <div class="columns large-12"> -->
-    <h1>Items</h1>
+    <h1>Notes</h1>
   <!-- </div> -->
 </div>
 
@@ -11,6 +11,7 @@
         <tr>
           <th>Name</th>
           <th>Notes</th>
+          <th>Attachments</th>
           <th>Frequency</th>
           <th colspan="3"></th>
         </tr>
@@ -18,13 +19,27 @@
 
       <tbody>
         <% @items.each do |item| %>
-          <tr>
-            <td><%= item.name %></td>
-            <td><%= item.notes %></td>
+          <tr class="items-listing">
+            <td>
+              <a href="<%= property_item_path(@property, item) %>">
+                <p><%= item.name %></p>
+              </a>
+            </td>
+            <td>
+              <a href="<%= property_item_path(@property, item) %>">
+                <%= simple_format truncate(item.notes, length: 200, escape: false) %>
+              </a>
+            </td>
+            <td>
+              <% if item.item_attachments.exists? %>
+                <% item.item_attachments.each do |item_attachment| %>
+                  <%= image_tag item_attachment.file.thumb.url %>
+                <% end %>
+              <% end %>
+            </td>
             <td><%= item.frequency %></td>
-            <td><%= link_to 'Show', property_item_path(@property, item) %></td>
             <td><%= link_to 'Edit', edit_property_item_path(property_id: @property.id, id: item.id) %></td>
-            <td><%= link_to 'Destroy', property_item_path(property_id: @property.id, id: item.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Delete', property_item_path(property_id: @property.id, id: item.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
