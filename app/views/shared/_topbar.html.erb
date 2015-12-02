@@ -1,0 +1,24 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="/">Housechief</a></h1>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <% if @property.persisted? %>
+        <li class="has-dropdown">
+          <a href="#">Menu</a>
+          <ul class="dropdown">
+            <li><%= link_to 'New Note', new_property_item_path(@property) %></li>
+            <li><%= link_to 'Add Contact', new_property_service_provider_path(@property) %></li>
+            <li><%= link_to 'Add an Admin', new_property_user_path(@property) %></li>
+            <li><%= link_to 'Property Settings', edit_property_path(@property) %></li>
+            <!-- <li class="active"><a href="#">Active link in dropdown</a></li> -->
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</nav>

@@ -10,22 +10,16 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
-  <div class="row">
-    <div class="field">
-      <%= f.label :email %><br>
-      <%= f.text_field :email, autofocus: true %>
-    </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, autofocus: true %>
   </div>
-  <div class="row">
-    <div class="actions">
-      <%= f.submit 'Send invite', class: 'button' %>
-    </div>
+  <div class="actions">
+    <%= f.submit 'Send invite', class: 'button' %>
   </div>
   <%= f.hidden_field :property_id, value: params[:property_id] %>
 <% end %>

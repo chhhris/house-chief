@@ -16,6 +16,7 @@
 
   <body>
     <div class="background-image">
+      <%= render partial: 'shared/topbar' %>
       <% if flash[:notice] || flash[:alert] %>
         <div class="flash">
           <%= notice || alert %>

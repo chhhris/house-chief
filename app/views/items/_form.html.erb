@@ -34,7 +34,7 @@
     </div>
     <div class="columns large-6">
       <select name="item[last_maintenance_at][month]">
-        <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Please select</option>
+        <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Select Month</option>
         <%= Property::MONTHS.each do |month| %>
           <option value="<%= month %>" <%= 'selected' if @item.last_maintenance_at && @item.last_maintenance_at.strftime('%B') == month %>><%= month %></option>
         <% end %>
@@ -42,7 +42,7 @@
     </div>
     <div class="columns large-6">
       <select name="item[last_maintenance_at][year]">
-        <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Please select</option>
+        <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Select Year</option>
         <%= (1990..Time.now.year).to_a.reverse.each do |year| %>
           <option value="<%= year %>" <%= 'selected' if @item.last_maintenance_at && @item.last_maintenance_at.strftime('%Y') == year %>><%= year %></option>
         <% end %>

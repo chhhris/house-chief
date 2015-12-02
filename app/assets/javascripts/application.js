@@ -21,6 +21,14 @@ $(function(){ $(document).foundation(); });
 
 function init() {
   hideFlashMsg();
+  menuListener();
+}
+
+function menuListener() {
+  $('.js-menu-button').click(function(){
+    // console.log("HALLO");
+    $('.js-menu-items').toggle();
+  });
 }
 
 function hideFlashMsg() {

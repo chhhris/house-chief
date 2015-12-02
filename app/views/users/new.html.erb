@@ -1,34 +1,28 @@
-<p id="notice"><%= notice %></p>
 <div class="row">
+
   <div class="large-12 columns">
-    <div class="panel">
-      <h1><%= @property.name %></h1>
-      <p><%= @property.address %></p>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="large-3 columns ">
-    <%= render partial: 'shared/menu' %>
-  </div>
-
-  <div class="large-5 columns end">
     <div class="row">
-      <h2>Add a user <%= "to #{@property.name}" if @property.present? %></h2>
-      <% if @property.present? %>
-        <div class="alert">
-          <p>Note: This action will add the user as an admin to the <%= @property.name %> property.</p>
-          <p>You can add or invite a service provider (e.g. electrician, plumber, contractor) on the <a href-"#">Service Providers page</a>.</p>
-        </div>
-      <% end %>
+      <div class="large-12 columns">
+        <h2>Add a user <%= "to #{@property.name}" if @property.present? %></h2>
+        <% if @property.present? %>
+          <div class="alert">
+            <p>Note: This action will add the user as an admin to the <%= @property.name %> property.</p>
+            <p>You can add or invite a service provider (e.g. electrician, plumber, contractor) on the <a href-"#">Service Providers page</a>.</p>
+          </div>
+        <% end %>
+      </div>
     </div>
 
-    <%= render 'form' %>
+    <div class="row">
+      <div class="large-8 columns end">
+        <%= render 'form' %>
+      </div>
+    </div>
 
     <div class="row">
-      <%= link_to 'Back', @property.present? ? property_path(@property) : properties_path %>
+      <div class="large-12 columns">
+        <%= link_to 'Back', @property.present? ? property_path(@property) : properties_path %>
+      </div>
     </div>
   </div>
 
