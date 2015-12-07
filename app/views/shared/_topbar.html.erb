@@ -7,7 +7,7 @@
 
   <section class="top-bar-section">
     <ul class="right">
-      <% if @property.persisted? %>
+      <% if @property.present? && @property.persisted? %>
         <li class="has-dropdown">
           <a href="#">Menu</a>
           <ul class="dropdown">
