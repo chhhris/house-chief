@@ -36,7 +36,18 @@
           <div class="row">
             <% @item_attachments.each_with_index do |item_attachment, index| %>
               <% last_attachment = item_attachments_count == (index + 1) %>
-              <div class="large-6 columns small-6 <%= 'end' if last_attachment %>"><%= image_tag item_attachment.file.url %></div>
+              <% file = item_attachment.file %>
+              <% is_image = file.content_type.start_with?('image') %>
+              <% file_preview = is_image ? file.url : 'download.png' %>
+              <div class="large-6 columns small-6 file-link <%= 'end' if last_attachment %>">
+                <a href="<%= file.url %>" type="<%= file.content_type %>" taget="_blank">
+                  <%= image_tag(file_preview) %>
+                  <% unless is_image %>
+                    <br><span class="download-label">Click to download</span>
+                  <% end %>
+                  <br><%= file.filename || file.file.filename %>
+                </a>
+              </div>
             <% end %>
           </div>
         <% end %>

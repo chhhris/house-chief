@@ -3,6 +3,11 @@
 class AttachmentUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
+  include CarrierWave::MimeTypes
+
+  IMAGE_TYPES = %w( png jpg jpeg svt )
+
+  process :set_content_type
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
@@ -19,7 +24,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
-    ActionController::Base.helpers.asset_path("fallback/" + [version_name, "notebook.png"].compact.join('_'))
+    ActionController::Base.helpers.image_path('checkmark.png')
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
@@ -33,7 +38,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fit => [50, 50], if: :image?
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -47,5 +52,9 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  def image?
+    AttachmentUploader::IMAGE_TYPES.include? self.current_path.split('.').last
+  end
 
 end

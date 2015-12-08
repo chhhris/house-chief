@@ -16,7 +16,9 @@
 
   <body>
     <div class="background-image">
-      <%= render partial: 'shared/topbar' %>
+      <% unless controller_name == 'home' && action_name == 'index' %>
+        <%= render partial: 'shared/topbar' %>
+      <% end %>
       <% if flash[:notice] || flash[:alert] %>
         <div class="flash">
           <%= notice || alert %>

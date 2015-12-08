@@ -1,7 +1,7 @@
 class Item < ActiveRecord::Base
 
   belongs_to :property
-  has_many :item_attachments
+  has_many :item_attachments, dependent: :destroy
   has_many :item_users
   has_many :users, through: :item_users
 
