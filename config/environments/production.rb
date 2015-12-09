@@ -59,6 +59,8 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.action_controller.asset_host = 'd1deht6bgu9j7v.cloudfront.net'
+  config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   # config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
   # config.action_controller.asset_host = 'https://s3-us-west-1.amazonaws.com/housechief-assets'
 
