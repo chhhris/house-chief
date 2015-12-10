@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :service_providers, only: :create
 
   resources :properties do
-    resources :items
+    resources :items, path: 'notes'
     resources :users
     resources :service_providers
   end
