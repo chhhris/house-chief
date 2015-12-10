@@ -7,8 +7,13 @@
       </div>
       <div class="large-7 columns">
         <ul class="inline-list right">
-          <li><%= link_to 'New note', new_property_item_path(@property) %></li>
-          <li><%= link_to 'Edit this note', edit_property_item_path(@property, @item) %></li>
+          <% if @property.present? %>
+            <li><%= link_to 'New note', new_property_item_path(@property) %></li>
+          <% end %>
+          <% if @property && @item %>
+            <li><%= link_to 'Edit this note', edit_property_item_path(@property, @item) %></li>
+            <li><%= link_to 'Delete this note', property_item_path(property_id: @property.id, id: @item.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          <% end %>
         </ul>
       </div>
     </div>

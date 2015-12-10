@@ -1,7 +1,7 @@
 <% has_item_attachments = item.item_attachments.exists? %>
 <div class="row">
-  <div class="large-1 columns small-3"><img src="<%= image_path('checkmark.png') %>"/></div>
-  <div class="large-11 columns">
+  <div class="large-1 columns medium-1 small-1"><img src="<%= image_path('checkmark.png') %>"/></div>
+  <div class="large-11 columns medium-11 small-11">
     <p class="item-title"><a href="<%= property_item_path(@property, item) %>">
       <strong><%= item.name %></strong></a>
     </p>
