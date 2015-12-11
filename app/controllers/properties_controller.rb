@@ -11,7 +11,9 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
-    @items = @property.items.order('name ASC')
+    Rails.cache.fetch(@property.cache_key) do
+      @items = @property.items.order('name ASC')
+    end
   end
 
   # GET /properties/new

@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
 
-  belongs_to :property
+  belongs_to :property, touch: true
   has_many :item_attachments, dependent: :destroy
   has_many :item_users
   has_many :users, through: :item_users
