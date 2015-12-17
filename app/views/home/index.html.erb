@@ -1,5 +1,5 @@
-<div class="splash">
-  <div class="welcome-sidebar">
+<div class="row">
+  <div class="columns large-5 medium-12 small-12">
     <div class="calls-to-action">
       <h3>It's 100% free.</h3>
       <a href="<%= new_user_registration_path %>" class="button large round">Start Organizing</a>
@@ -7,31 +7,30 @@
     </div>
   </div>
 
-  <!-- <div class="transparency"> -->
-    <div class="welcome-splash-container">
-      <h1 class="welcome-title">House Chief</h1>
-      <div class="sub-bullets">
-        <ul class="inline-list">
-          <li>Get organized</li>
-          <li>Save notes and photos</li>
-          <li>Set reminders</li>
-        </ul>
-        <ul class="sub-bullets inline-list">
-          <li>Schedule recurring tasks</li>
-          <li>Send invites</li>
-          <li>Collaborate</li>
-        </ul>
-      </div>
+  <div class="columns large-7 medium-12 small-12">
+    <h1 class="welcome-title">House Chief</h1>
+    <div class="sub-bullets">
+      <ul class="inline-list">
+        <li>Get organized</li>
+        <li>Save notes and photos</li>
+        <li>Set reminders</li>
+      </ul>
+      <ul class="sub-bullets inline-list">
+        <li>Schedule recurring tasks</li>
+        <li>Send invites</li>
+        <li>Collaborate</li>
+      </ul>
     </div>
-  <!-- </div> -->
-</div>
+  </div>
 
+</div>
 <footer>
   <div class="footer-content">
     <ul class="inline-list right">
-      <li>© Copyright House Chief, Inc. 2015.</li>
+      <li>© Copyright HouseChief 2015</li>
       <li>About<%# link_to 'New note', new_property_item_path(@property) %></li>
       <li>Contact<%# link_to 'Edit this page', edit_property_path(@property) %></li>
     </ul>
   </div>
 </footer>
+

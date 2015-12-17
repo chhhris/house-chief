@@ -1,20 +1,10 @@
-.splash {
-  height: 800px;
-}
 .welcome-title {
-  font-size: 10vw;
+  font-size: 10em;
+  line-height: 0.9em;
   font-weight: bold;
   text-align: center;
   text-shadow: 2px 2px #E2E2E2;
   color: #171D1D;
-  margin-top: 50px;
-}
-
-.welcome-sidebar {
-  float: left;
-  width: 30%;
-  background-color: white;
-  height: 250px;
 }
 
 @media only screen
@@ -28,43 +18,32 @@
 
 .calls-to-action {
   text-align: center;
-
   h3 {
     margin: 50px auto 40px auto;
     font-family: 'Knewave', cursive;
-    font-size: 3vw;
+    font-size: 3em;
   }
-
   a.button {
     margin-bottom: 40px;
     font-size: 1.8vw;
   }
-
   p {
-    font-size: 1.3vw;
-    line-height: 1.7vw;
+    line-height: 1.7em;
   }
 }
-
-.welcome-splash-container {
-  float: right;
-  width: 70%;
-  top: 17%;
-}
-
 .splash-copy {
   text-align: center;
 }
-
 .sub-bullets {
   text-align: center;
 
   ul {
-    font-size: 1.9vw;
-    line-height: 1.9vw;
+    font-size: 1.3em;
+    line-height: 1.9em;
     display: inline-block;
     li {
-      padding: 1vw;
+      padding: 0.5em;
+      margin: 0.5em;
       background-color: rgba(131, 131, 131, 0.9);
       color: white;
     }
