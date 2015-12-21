@@ -16,16 +16,14 @@
   </head>
 
   <body>
-    <div class="background-image">
-      <% unless controller_name == 'home' && action_name == 'index' %>
-        <%= render partial: 'shared/topbar' %>
-      <% end %>
-      <% if flash[:notice] || flash[:alert] %>
-        <div class="flash">
-          <%= notice || alert %>
-        </div>
-      <% end %>
-      <%= yield %>
-    </div>
+    <% unless controller_name == 'home' && action_name == 'index' %>
+      <%= render partial: 'shared/topbar' %>
+    <% end %>
+    <% if flash[:notice] || flash[:alert] %>
+      <div class="flash">
+        <%= notice || alert %>
+      </div>
+    <% end %>
+    <%= yield %>
   </body>
 </html>
