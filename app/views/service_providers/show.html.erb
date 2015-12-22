@@ -29,19 +29,4 @@
 
 </div>
 
-<footer class="row">
-  <div class="large-12 columns">
-    <hr/>
-    <div class="row">
-      <div class="large-5 columns">
-        <p>© Copyright House Chief 2015</p>
-      </div>
-      <div class="large-7 columns">
-        <ul class="inline-list right">
-          <li><%= link_to 'New note', new_property_item_path(@property) %></li>
-          <li><%= link_to 'Property settings', edit_property_path(@property) %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+<%= render partial: 'shared/footer' %>

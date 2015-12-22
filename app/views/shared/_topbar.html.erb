@@ -1,23 +1,27 @@
-<nav class="top-bar" data-topbar role="navigation">
+<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: [small,medium,large]">
   <ul class="title-area">
     <li class="name">
       <h1><a href="/">Housechief</a></h1>
     </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
   </ul>
 
   <section class="top-bar-section">
     <ul class="right">
       <% if @property.present? && @property.persisted? %>
+        <!-- <li class="active"><a href="#">Right Button Active</a></li> -->
+        <li><a href="<%= property_path(@property) %>">Notes</a></li>
+        <li><a href="<%= property_service_providers_path(@property) %>">Contacts</a></li>
+        <li><a href="<%= edit_property_path(@property) %>">Settings</a></li>
         <li class="has-dropdown">
-          <a href="#">Menu</a>
+          <a href="#"><%= image_tag('add-note-white.png') %></a>
           <ul class="dropdown">
-            <li><%= link_to 'New Note', new_property_item_path(@property) %></li>
-            <li><%= link_to 'Add Contact', new_property_service_provider_path(@property) %></li>
-            <li><%= link_to 'Add an Admin', new_property_user_path(@property) %></li>
-            <li><%= link_to 'Property Settings', edit_property_path(@property) %></li>
-            <!-- <li class="active"><a href="#">Active link in dropdown</a></li> -->
+            <li><a href="<%= new_property_item_path(@property) %>">New Note</a></li>
+            <li><%= link_to 'New Contact', new_property_service_provider_path(@property) %></li>
+            <li><%= link_to 'Add Admin', new_property_user_path(@property) %></li>
           </ul>
         </li>
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
       <% end %>
     </ul>
   </section>
