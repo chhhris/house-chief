@@ -3,8 +3,7 @@
     <h2>Contacts</h2>
     <% @property.service_providers.each do |service_provider| %>
       <div class="row">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
-          <div class="large-10 columns">
+          <div class="large-12 columns">
             <p><strong><%= service_provider.name %></strong></p>
             <% if service_provider.description.present? %>
               <p><%= service_provider.description %></p>

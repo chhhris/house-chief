@@ -1,30 +1,30 @@
 <div class="row">
 
   <div class="large-12 columns">
-    <h2>Contacts</h2>
-    <% if @property.service_providers.blank? %>
-      <p>You haven't added any service providers yet. <a href="<%= new_property_service_provider_path(@property) %>">Add one.</a></p>
-    <% else %>
-      <% @property.service_providers.each do |service_provider| %>
-        <div class="row">
-          <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
-          <div class="large-10 columns">
-            <p><strong><%= service_provider.name %></strong> (<a href="<%= property_service_provider_path(@property, service_provider) %>">full view</a>)</p>
-            <% if service_provider.description.present? %>
-              <p><%= service_provider.description %></p>
-            <% end %>
-            <% if service_provider.phone.present? %>
-              <p><%= service_provider.phone %></p>
-            <% end %>
-            <% if service_provider.address.present? %>
-              <p><%= service_provider.address %></p>
-            <% end %>
-          </div>
-        </div>
-        <hr/>
-      <% end %>
-    <% end %>
-
+    <h2><%= @service_provider.name %> <span class="edit-link">(<a href="<%= edit_property_service_provider_path(@property, @service_provider) %>">edit</a>)</span> </h2>
+    <div class="row">
+      <div class="large-12 columns">
+        <p><b>Description</b></p>
+        <p><%= @service_provider.description %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <p><b>Phone</b></p>
+        <p><%= @service_provider.phone %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <p><b>Address</b></p>
+        <p><%= @service_provider.address %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <p><b>Date added:</b> <%= time_ago_in_words @service_provider.created_at %> ago</p>
+      </div>
+    </div>
   </div>
 
 </div>

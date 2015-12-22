@@ -19,7 +19,7 @@
     <%= f.text_field :email, autofocus: true %>
   </div>
   <div class="actions">
-    <%= f.submit 'Send invite', class: 'button' %>
+    <%= f.submit @user.persisted? ? 'Save' : 'Send invite', class: 'button' %>
   </div>
   <%= f.hidden_field :property_id, value: params[:property_id] %>
 <% end %>
