@@ -28,40 +28,46 @@
   </div>
 
   <div class="row">
-    <div class="columns large-12">
-      <%= f.label :last_maintenance_at %>
-      <br/>
+    <div class="columns large-7">
+      <div class="row">
+        <div class="columns large-12">
+          <%= f.label :last_maintenance_at, 'Last maintenance' %>
+        </div>
+        <div class="columns large-4">
+          <select name="item[last_maintenance_at][month]">
+            <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Select Month</option>
+            <%= Property::MONTHS.each do |month| %>
+              <option value="<%= month %>" <%= 'selected' if @item.last_maintenance_at && @item.last_maintenance_at.strftime('%B') == month %>><%= month %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="columns large-3">
+          <select name="item[last_maintenance_at][year]">
+            <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Select Year</option>
+            <%= (1990..Time.now.year).to_a.reverse.each do |year| %>
+              <option value="<%= year %>" <%= 'selected' if @item.last_maintenance_at && @item.last_maintenance_at.strftime('%Y') == year %>><%= year %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="columns large-5">
+          <select name="item[frequency]">
+            <option value="" selected="selected">Frequency (optional)</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="quarterly">Quarterly</option>
+            <option value="biannually">Twice per year</option>
+            <option value="annually">Annually</option>
+          </select>
+        </div>
+      </div>
     </div>
-    <div class="columns large-6">
-      <select name="item[last_maintenance_at][month]">
-        <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Select Month</option>
-        <%= Property::MONTHS.each do |month| %>
-          <option value="<%= month %>" <%= 'selected' if @item.last_maintenance_at && @item.last_maintenance_at.strftime('%B') == month %>><%= month %></option>
-        <% end %>
-      </select>
-    </div>
-    <div class="columns large-6">
-      <select name="item[last_maintenance_at][year]">
-        <option value="" <%= 'selected' unless @item.last_maintenance_at %> >Select Year</option>
-        <%= (1990..Time.now.year).to_a.reverse.each do |year| %>
-          <option value="<%= year %>" <%= 'selected' if @item.last_maintenance_at && @item.last_maintenance_at.strftime('%Y') == year %>><%= year %></option>
-        <% end %>
-      </select>
-    </div>
-  </div>
-  <div class="row">
-    <div class="columns large-12">
-      <label for="item_frequency">Frequency <i>(Optional)</i>
-        <select name="item[frequency]">
-          <option value="" selected="selected">Please select</option>
-          <option value="daily">Daily</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="quarterly">Quarterly</option>
-          <option value="biannually">Twice per year</option>
-          <option value="annually">Annually</option>
-        </select>
-      </label>
+
+    <div class="columns large-5">
+      <%= f.label :attachments %>
+      <div class="attachment-button">
+        <%= f.file_field :attachments, multiple: true %>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -84,13 +90,12 @@
       <% end %>
       <!-- <label for="item_attachments">Attachments</label><br>
       <input type="file" name="item_attachments" id="item_attachments" multiple="multiple"> -->
-      <%= f.label :attachments %><br>
-      <%= f.file_field :attachments, multiple: true %>
       <%# f.hidden_field :attachments_cache %>
     </div>
   </div>
+  <hr>
   <div class="actions">
-    <%= f.submit @item.new_record? ? 'Create item' : 'Update item', class: 'button' %>
+    <%= f.submit @item.new_record? ? 'Create Note' : 'Update Note', class: 'button' %>
   </div>
 <% end %>
 
