@@ -1,25 +1,37 @@
-<div class="row">
-  <div class="large-12 columns">
-    <h2>Contacts</h2>
-    <% @property.service_providers.each do |service_provider| %>
-      <div class="row">
-          <div class="large-12 columns">
-            <h3><strong><%= service_provider.name %></strong> <span class="edit-link">(<a href="<%= edit_property_service_provider_path(@property, service_provider) %>">edit</a>)</span></h3>
-            <% if service_provider.description.present? %>
-              <p><%= service_provider.description %></p>
-            <% end %>
-            <% if service_provider.phone.present? %>
-              <p><%= service_provider.phone %></p>
-            <% end %>
-            <% if service_provider.address.present? %>
-              <p><%= service_provider.address %></p>
-            <% end %>
-          </div>
+<div class="row listing-shadow">
+  <div class="row">
+    <div class="panel header-panel">
+      <div class="large-12 columns">
+        <h1><%= @property.name %> <u>Contacts</u></h1>
       </div>
-      <hr/>
-    <% end %>
+    </div>
   </div>
 
-</div>
+  <div class="row listing-shadow">
+    <div class="columns large-12">
+      <% @property.service_providers.each do |service_provider| %>
+        <div class="row listing-row">
+            <div class="large-12 columns">
+              <h3><strong><%= service_provider.name %></strong> <span class="edit-link">(<a href="<%= edit_property_service_provider_path(@property, service_provider) %>">edit</a>)</span></h3>
+              <% if service_provider.description.present? %>
+                <p><%= service_provider.description %></p>
+              <% end %>
+              <% if service_provider.phone.present? %>
+                <p><%= service_provider.phone %></p>
+              <% end %>
+              <% if service_provider.address.present? %>
+                <p><%= service_provider.address %></p>
+              <% end %>
+            </div>
+        </div>
+        <hr/>
+      <% end %>
+    </div>
+  </div>
 
-<%= render partial: 'shared/footer' %>
+  <div class="row">
+    <div class="columns large-12">
+      <%= link_to 'Back', property_path(@property) %>
+    </div>
+  </div>
+</div>

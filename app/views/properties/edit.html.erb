@@ -1,6 +1,21 @@
-<h1>Editing Property</h1>
+<div class="row listing-shadow">
+  <div class="row">
+    <div class="panel header-panel">
+      <div class="large-12 columns">
+        <h1>Edit <u><%= @property.name %></u></h1>
+      </div>
+    </div>
+  </div>
 
-<%= render 'form' %>
+  <div class="row listing-shadow">
+    <div class="columns large-12">
+      <%= render 'form' %>
+    </div>
+  </div>
 
-<%= link_to 'Show', @property %> |
-<%= link_to 'Back', properties_path %>
+  <div class="row">
+    <div class="columns large-12">
+      <%= link_to 'Back', property_path(@property) %>
+    </div>
+  </div>
+</div>

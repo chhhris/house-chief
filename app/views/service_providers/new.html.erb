@@ -1,19 +1,21 @@
-<div class="row">
-
-  <div class="large-12 columns">
-    <h2>Add a service provider to <%= @property.name %></h2>
-
-    <div class="row">
+<div class="row listing-shadow">
+  <div class="row">
+    <div class="panel header-panel">
       <div class="large-12 columns">
-        <%= render 'form' %>
+        <h1>New Contact</h1>
       </div>
-    </div>
-
-    <div class="row">
-      <%= link_to 'Back', property_path(@property) %>
     </div>
   </div>
 
-</div>
+  <div class="row listing-shadow">
+    <div class="columns large-12">
+      <%= render 'form' %>
+    </div>
+  </div>
 
-<%= render partial: 'shared/footer' %>
+  <div class="row">
+    <div class="columns large-12">
+      <%= link_to 'Back', property_path(@property) %>
+    </div>
+  </div>
+</div>

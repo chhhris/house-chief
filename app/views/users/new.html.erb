@@ -1,46 +1,22 @@
-<div class="row">
-
-  <div class="large-12 columns">
-    <div class="row">
+<div class="row listing-shadow">
+  <div class="row">
+    <div class="panel header-panel">
       <div class="large-12 columns">
-        <h2>Add a user <%= "to #{@property.name}" if @property.present? %></h2>
-        <% if @property.present? %>
-          <div class="alert">
-            <p>Note: This action will add the user as an admin to the <%= @property.name %> property.</p>
-            <p>You can add or invite a service provider (e.g. electrician, plumber, contractor) on the <a href-"#">Service Providers page</a>.</p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-8 columns end">
-        <%= render 'form' %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-12 columns">
-        <%= link_to 'Back', @property.present? ? property_path(@property) : properties_path %>
+        <h1>New Admin</h1>
+        <p>Adds an admin to the <%= @property.name %> account. Create contacts for electricians, plumbers, contractors, etc. on the <u><a href="<%= new_property_service_provider_path(@property) %>">Contacts page</a></u>.</p>
       </div>
     </div>
   </div>
 
+  <div class="row listing-shadow">
+    <div class="columns large-12">
+      <%= render 'form' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columns large-12">
+      <%= link_to 'Back', property_path(@property) %>
+    </div>
+  </div>
 </div>
-
-<footer class="row">
-  <div class="large-12 columns">
-    <hr/>
-    <div class="row">
-      <div class="large-5 columns">
-        <p>© Copyright 2015 House Chief</p>
-      </div>
-      <div class="large-7 columns">
-        <ul class="inline-list right">
-          <li><%= link_to 'New note', new_property_item_path(@property) %></li>
-          <li><%= link_to 'Property settings', edit_property_path(@property) %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>

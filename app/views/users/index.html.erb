@@ -1,19 +1,30 @@
-<div class="row">
+<div class="row listing-shadow">
+  <div class="row">
+    <div class="panel header-panel">
+      <div class="large-12 columns">
+        <h1><%= @property.name %> Admins</h1>
+      </div>
+    </div>
+  </div>
 
-  <div class="large-12 columns">
-    <h2><%= @property.name %> Admins</h2>
-    <% @property.users.each do |user| %>
-      <div class="row">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+  <div class="row listing-shadow">
+    <div class="columns large-12">
+      <% @property.users.each do |user| %>
+        <div class="row listing-row">
+          <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
           <div class="large-10 columns">
             <p><strong><%= user.name %></strong></p>
             <p><%= user.email %></p>
           </div>
-      </div>
-      <hr/>
-    <% end %>
+        </div>
+        <hr/>
+      <% end %>
+    </div>
   </div>
 
+  <div class="row">
+    <div class="columns large-12">
+      <%= link_to 'Back', property_path(@property) %>
+    </div>
+  </div>
 </div>
-
-<%= render partial: 'shared/footer' %>
