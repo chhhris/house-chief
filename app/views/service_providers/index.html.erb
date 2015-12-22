@@ -4,7 +4,7 @@
     <% @property.service_providers.each do |service_provider| %>
       <div class="row">
           <div class="large-12 columns">
-            <p><strong><%= service_provider.name %></strong></p>
+            <h3><strong><%= service_provider.name %></strong> <span class="edit-link">(<a href="<%= edit_property_service_provider_path(@property, service_provider) %>">edit</a>)</span></h3>
             <% if service_provider.description.present? %>
               <p><%= service_provider.description %></p>
             <% end %>
