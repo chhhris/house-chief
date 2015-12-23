@@ -13,7 +13,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # storage :file
   storage :fog
 
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [800, 800], if: :image?
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
@@ -28,8 +28,8 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb, :if => :image? do
-    process :resize_to_fit => [50, 50]
+  version :thumb, if: :image? do
+    process resize_to_fit: [50, 50]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

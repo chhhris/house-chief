@@ -7,7 +7,7 @@
       <div class="large-11 columns">
         <div class="row">
           <div class="large-12 columns">
-            <h2><strong><%= @item.name %></strong></h2>
+            <h2><strong><%= @item.name %></strong> <span class="edit-link">(<a href="<%= edit_property_item_path(@property, @item) %>">edit</a>)</span></h2>
             <p><%= simple_format @item.notes %></p>
           </div>
         </div>
