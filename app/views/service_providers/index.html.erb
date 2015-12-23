@@ -17,7 +17,7 @@
                 <p><%= service_provider.description %></p>
               <% end %>
               <% if service_provider.phone.present? %>
-                <p><%= service_provider.phone %></p>
+                <p><%= number_to_phone service_provider.phone, area_code: true %></p>
               <% end %>
               <% if service_provider.address.present? %>
                 <p><%= service_provider.address %></p>
