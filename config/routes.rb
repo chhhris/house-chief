@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :properties do
     resources :items, path: 'notes'
     resources :users
-    resources :service_providers
+    resources :service_providers, path: 'contacts'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
