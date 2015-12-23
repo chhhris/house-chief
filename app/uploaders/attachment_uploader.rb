@@ -24,7 +24,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
-    ActionController::Base.helpers.image_path('checkmark.png')
+    ActionController::Base.helpers.image_path('document-icon.png')
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
@@ -37,8 +37,8 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process :resize_to_fit => [50, 50], if: :image?
+  version :thumb, :if => :image? do
+    process :resize_to_fit => [50, 50]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -53,8 +53,9 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  def image?
-    AttachmentUploader::IMAGE_TYPES.include? self.current_path.split('.').last
-  end
+protected
 
+  def image?(new_file)
+    new_file.content_type.start_with? 'image'
+  end
 end

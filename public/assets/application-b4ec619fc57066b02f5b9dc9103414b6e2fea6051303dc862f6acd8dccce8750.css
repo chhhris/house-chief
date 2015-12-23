@@ -9439,339 +9439,6 @@ th.hide-for-touch {
     display: none !important;
   }
 }
-/* line 1, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.splash {
-  height: 800px;
-}
-
-/* line 4, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.welcome-title {
-  font-size: 10vw;
-  font-weight: bold;
-  text-align: center;
-  text-shadow: 2px 2px #E2E2E2;
-  color: #171D1D;
-  margin-top: 50px;
-}
-
-/* line 13, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.welcome-sidebar {
-  float: left;
-  width: 30%;
-  background-color: white;
-  height: 250px;
-}
-
-@media only screen and (min-width: 1025px) {
-  /* line 22, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-  .welcome-sidebar {
-    background-color: white;
-    position: relative;
-    height: 100%;
-  }
-}
-/* line 29, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.calls-to-action {
-  text-align: center;
-}
-/* line 32, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.calls-to-action h3 {
-  margin: 50px auto 40px auto;
-  font-family: 'Knewave', cursive;
-  font-size: 3vw;
-}
-/* line 38, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.calls-to-action a.button {
-  margin-bottom: 40px;
-  font-size: 1.8vw;
-}
-/* line 43, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.calls-to-action p {
-  font-size: 1.3vw;
-  line-height: 1.7vw;
-}
-
-/* line 49, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.welcome-splash-container {
-  float: right;
-  width: 70%;
-  top: 17%;
-}
-
-/* line 55, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.splash-copy {
-  text-align: center;
-}
-
-/* line 59, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.sub-bullets {
-  text-align: center;
-}
-/* line 62, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.sub-bullets ul {
-  font-size: 1.9vw;
-  line-height: 1.9vw;
-  display: inline-block;
-}
-/* line 66, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.sub-bullets ul li {
-  padding: 1vw;
-  background-color: rgba(131, 131, 131, 0.9);
-  color: white;
-}
-
-/* line 75, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.menu .actions-links {
-  padding-left: 5px;
-}
-/* line 78, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.menu .actions-header {
-  text-transform: uppercase;
-  font-family: monospace, serif;
-}
-
-/* line 84, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.transparency {
-  background-color: rgba(255, 255, 255, 0.7);
-  height: 100%;
-}
-
-/* line 89, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
-.footer-content {
-  margin-top: 20px;
-}
-/* line 5, /Users/clake/Sites/house-chief/app/assets/stylesheets/items.scss */
-.ui-datepicker-calendar {
-  display: none;
-}
-
-/* line 8, /Users/clake/Sites/house-chief/app/assets/stylesheets/items.scss */
-.ui-datepicker {
-  width: 30em !important;
-}
-/* line 1, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.property {
-  background-color: white;
-}
-
-/* line 5, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.header-panel {
-  overflow: auto;
-  position: relative;
-  margin-bottom: 0 !important;
-}
-/* line 10, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.header-panel h1 {
-  display: inline;
-  padding-right: 5px;
-}
-/* line 15, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.header-panel .subtitle {
-  position: absolute;
-  bottom: 0;
-}
-/* line 20, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.header-panel .inline-list {
-  float: right;
-}
-/* line 24, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.header-panel .header-actions {
-  bottom: 0;
-  position: absolute;
-  right: 0;
-}
-
-/* line 31, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.first-row {
-  padding-top: 30px;
-}
-
-/* line 35, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.item-thumbnail-container {
-  position: relative;
-  padding-right: 0;
-  padding-top: 15px;
-}
-
-/* line 41, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.item-thumbnail {
-  margin: auto;
-  display: block;
-}
-
-/* line 46, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.item-title {
-  font-size: 2em;
-}
-
-/* line 50, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.item-notes {
-  margin-left: 0 !important;
-}
-
-/* line 54, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.pull-right {
-  float: right !important;
-}
-/* line 57, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
-.pull-right strong {
-  text-align: right;
-}
-/* line 1, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-/* line 9, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-/* line 15, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-/* line 21, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-a {
-  color: #000;
-}
-/* line 24, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-a:visited {
-  color: #666;
-}
-/* line 28, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-a:hover {
-  color: #fff;
-  background-color: #000;
-}
-
-/* line 35, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-div.field, div.actions {
-  margin-bottom: 10px;
-}
-
-/* line 40, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-#notice {
-  color: green;
-}
-
-/* line 44, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-/* line 50, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-/* line 58, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
-}
-/* line 69, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
-
-
-
-
-
- */
-/* line 21, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
-h1 {
-  font-family: monospace, serif;
-  font-weight: 900;
-}
-
-/* line 26, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
-#notice {
-  text-align: center;
-  position: absolute;
-  background-color: #FAFBD0;
-  width: 100%;
-  z-index: 1;
-  padding: 20px;
-  font-size: 1.5em;
-}
-
-/* line 36, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
-.flash {
-  padding: 30px;
-  background-color: white;
-  font-size: 20px;
-  color: brown;
-  position: absolute;
-  width: 100%;
-  z-index: 100;
-}
-
-/* line 45, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
-.background-image {
-  background-image: url(/assets/tools-background-smaller-2d31de29012b27b30423ef94f0a9ee41907429d1ee2ad2e44fb690eb46244aed.jpg);
-  min-height: 800px;
-}
-
-/* line 50, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
-.background-overlay {
-  background-color: rgba(255, 255, 255, 0.5);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-}
-
-/* line 58, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
-.row {
-  background-color: white;
-}
-
-/* line 62, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
-.listing-shadow {
-  box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000;
-}
-
-/* line 66, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
-.form-shadow {
-  box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000;
-}
 /*!
  * jQuery UI CSS Framework 1.11.4
  * http://jqueryui.com
@@ -10476,4 +10143,372 @@ h1 {
 .ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
 	border-right-width: 0;
 	border-left-width: 1px;
+}
+/* line 1, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.welcome-title {
+  font-size: 10em;
+  line-height: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px #E2E2E2;
+  color: #171D1D;
+}
+
+@media only screen and (min-width: 1025px) {
+  /* line 12, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+  .welcome-sidebar {
+    background-color: white;
+    position: relative;
+    height: 100%;
+  }
+}
+/* line 19, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.calls-to-action {
+  text-align: center;
+}
+/* line 21, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.calls-to-action h3 {
+  margin: 50px auto 40px auto;
+  font-family: 'Knewave', cursive;
+  font-size: 3em;
+}
+/* line 26, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.calls-to-action a.button {
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+/* line 30, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.calls-to-action p {
+  line-height: 1.7em;
+  font-size: 16px;
+}
+
+/* line 35, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.splash-copy {
+  text-align: center;
+}
+
+/* line 38, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.sub-bullets {
+  text-align: center;
+}
+/* line 41, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.sub-bullets ul {
+  font-size: 1.3em;
+  line-height: 1.9em;
+  display: inline-block;
+}
+/* line 45, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.sub-bullets ul li {
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: rgba(131, 131, 131, 0.9);
+  color: white;
+}
+
+/* line 55, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.menu .actions-links {
+  padding-left: 5px;
+}
+/* line 58, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.menu .actions-header {
+  text-transform: uppercase;
+  font-family: monospace, serif;
+}
+
+/* line 64, /Users/clake/Sites/house-chief/app/assets/stylesheets/home.scss */
+.transparency {
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+}
+/* line 5, /Users/clake/Sites/house-chief/app/assets/stylesheets/items.scss */
+.ui-datepicker-calendar {
+  display: none;
+}
+
+/* line 8, /Users/clake/Sites/house-chief/app/assets/stylesheets/items.scss */
+.ui-datepicker {
+  width: 30em !important;
+}
+
+/* line 11, /Users/clake/Sites/house-chief/app/assets/stylesheets/items.scss */
+.items-listing a:hover p {
+  font-weight: bold;
+  color: #446876;
+}
+
+/* line 16, /Users/clake/Sites/house-chief/app/assets/stylesheets/items.scss */
+.file-link a:hover {
+  background-color: transparent;
+  color: #446776;
+}
+
+/* line 21, /Users/clake/Sites/house-chief/app/assets/stylesheets/items.scss */
+.download-label {
+  font-weight: light;
+  font-size: 1.2em;
+}
+
+/* line 26, /Users/clake/Sites/house-chief/app/assets/stylesheets/items.scss */
+.attachment-button {
+  padding-top: 7px;
+}
+/* line 1, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.property {
+  background-color: white;
+}
+
+/* line 5, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.header-panel {
+  overflow: auto;
+  position: relative;
+  margin-bottom: 0 !important;
+}
+/* line 10, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.header-panel h1 {
+  display: inline;
+  padding-right: 5px;
+}
+/* line 15, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.header-panel .subtitle {
+  position: absolute;
+  bottom: 0;
+}
+/* line 20, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.header-panel .inline-list {
+  float: right;
+}
+/* line 24, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.header-panel .header-actions {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+/* line 31, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.first-row {
+  padding-top: 30px;
+}
+
+/* line 35, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.item-thumbnail-container {
+  position: relative;
+  padding-right: 0;
+  padding-top: 15px;
+}
+
+/* line 41, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.item-thumbnail {
+  margin: auto;
+  display: block;
+}
+
+/* line 46, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.item-title {
+  font-size: 2em;
+}
+
+/* line 50, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.item-notes {
+  margin-left: 0 !important;
+}
+
+/* line 54, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.pull-right {
+  float: right !important;
+}
+/* line 57, /Users/clake/Sites/house-chief/app/assets/stylesheets/properties.scss */
+.pull-right strong {
+  text-align: right;
+}
+/* line 1, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 24, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 28, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 40, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 44, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 50, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 58, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 69, /Users/clake/Sites/house-chief/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 5, /Users/clake/Sites/house-chief/app/assets/stylesheets/service_providers.scss */
+.edit-link {
+  font-size: 16px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+
+ */
+/* line 21, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+h1 {
+  font-family: monospace, serif;
+  font-weight: 900;
+}
+
+/* line 26, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+body {
+  background-image: url(/assets/tools-background-dfd76e1b399f745c8c24eb8467b7f753edc411ff09e9730a5c59d724beeffb5f.jpg);
+  background-repeat: repeat;
+}
+
+/* line 31, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+#item_notes {
+  height: 125px;
+}
+
+/* line 35, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+.shared-menu {
+  float: right;
+}
+/* line 38, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+.shared-menu ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+/* line 44, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+.shared-menu .menu-items {
+  background: white;
+  padding: 10px;
+}
+
+/* line 50, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+#notice {
+  text-align: center;
+  position: absolute;
+  background-color: #FAFBD0;
+  width: 100%;
+  z-index: 1;
+  padding: 20px;
+  font-size: 1.5em;
+}
+
+/* line 60, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+.flash {
+  padding: 30px;
+  background-color: white;
+  font-size: 20px;
+  color: brown;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+/* line 70, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+.row {
+  background-color: white;
+}
+
+/* line 74, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+.listing-shadow {
+  box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000;
+}
+
+/* line 78, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+.listing-row {
+  padding-top: 1.25rem;
+}
+
+/* line 82, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+.form-shadow {
+  box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000;
+}
+
+/* line 86, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+footer {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+/* line 92, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+footer .footer-content {
+  padding-top: 10px;
+}
+/* line 96, /Users/clake/Sites/house-chief/app/assets/stylesheets/application.scss */
+footer ul.inline-list {
+  margin-bottom: 10px !important;
 }
