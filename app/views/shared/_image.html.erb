@@ -1,0 +1,6 @@
+<%  attachment_file = item_attachment.file
+    file_url = thumb == true ? attachment_file.thumb.url : attachment_file.url
+    image_url = attachment_file.content_type.start_with?('image') && file_url
+ %>
+
+<%= image_tag(image_url || attachment_file.default_url) %>

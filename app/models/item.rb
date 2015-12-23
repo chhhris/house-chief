@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
 
   belongs_to :property, touch: true
   has_many :item_attachments, dependent: :destroy
-  accepts_nested_attributes_for :item_attachments, allow_destroy: true
+accepts_nested_attributes_for :item_attachments, allow_destroy: true
   has_many :item_users
   has_many :users, through: :item_users
 

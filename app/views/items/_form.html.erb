@@ -76,7 +76,7 @@
         <div class="row">
           <% attachment_count = @item_attachments.count %>
           <% @item_attachments.each_with_index do |item_attachment, index| %>
-            <div class="columns large-4 <%= 'end' if attachment_count == (index + 1) %>">
+            <div class="columns large-3 <%= 'end' if attachment_count == (index + 1) %>">
               <label for="remove_attachment">Remove file:
                 <input type="checkbox" name="remove_attachments[]" value="<%= item_attachment.id %>">
               </label>
@@ -88,9 +88,6 @@
           <% end %>
         </div>
       <% end %>
-      <!-- <label for="item_attachments">Attachments</label><br>
-      <input type="file" name="item_attachments" id="item_attachments" multiple="multiple"> -->
-      <%# f.hidden_field :attachments_cache %>
     </div>
   </div>
   <hr>

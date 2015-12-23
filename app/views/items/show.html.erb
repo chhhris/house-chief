@@ -35,15 +35,12 @@
           <h6>Attachments</h6>
           <div class="row">
             <% @item_attachments.each_with_index do |item_attachment, index| %>
-              <% last_attachment = item_attachments_count == (index + 1) %>
               <% file = item_attachment.file %>
-              <%# is_image = file.content_type.start_with?('image') %>
-              <% image_url = file.content_type.start_with?('image') && file.url %>
-              <%# file_preview = is_image ? file.url : 'download.png' %>
+              <% last_attachment = item_attachments_count == (index + 1) %>
               <div class="columns large-3 small-3 file-link <%= 'end' if last_attachment %>">
                 <a href="<%= file.url %>" type="<%= file.content_type %>" taget="_blank">
-                  <%= image_tag(image_url || file.default_url) %>
-                  <% unless image_url.present? %>
+                  <%= render partial: 'shared/image', locals: { item_attachment: item_attachment, thumb: false } %>
+                  <% unless file.content_type.start_with?('image').present? %>
                     <br><span class="download-label">Click to download</span>
                   <% end %>
                   <br><%= file.filename || file.file.filename %>

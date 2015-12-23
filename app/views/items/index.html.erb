@@ -33,9 +33,7 @@
             <td>
               <% if item.item_attachments.exists? %>
                 <% item.item_attachments.each do |item_attachment| %>
-                  <% attachment_file = item_attachment.file %>
-                  <% image_thumb_url = attachment_file.content_type.start_with?('image') && attachment_file.thumb.url %>
-                  <%= image_tag(image_thumb_url || attachment_file.default_url) %>
+                  <%= render partial: 'shared/image', locals: {item_attachment: item_attachment, thumb: true} %>
                 <% end %>
               <% end %>
             </td>

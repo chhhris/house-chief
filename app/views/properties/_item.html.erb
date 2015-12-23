@@ -16,9 +16,7 @@
       <% if has_item_attachments %>
         <% item.item_attachments.each do |item_attachment| %>
           <li class="pull-right">
-            <% attachment_file = item_attachment.file %>
-            <% image_thumb_url = attachment_file.content_type.start_with?('image') && attachment_file.thumb.url %>
-            <%= image_tag(image_thumb_url || attachment_file.default_url) %>
+            <%= render partial: 'shared/image', locals: { item_attachment: item_attachment, thumb: true} %>
           </li>
         <% end %>
       <% end %>
