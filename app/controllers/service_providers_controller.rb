@@ -60,6 +60,6 @@ private
   end
 
   def service_provider_params
-    params.require(:service_provider).permit(:name, :property_id)
+    params.require(:service_provider).permit(:name, :property_id, :phone, :address, :description)
   end
 end

@@ -134,6 +134,10 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.2)
+    phony (2.15.10)
+    phony_rails (0.12.11)
+      activesupport (>= 3.0)
+      phony (~> 2.12)
     puma (2.9.1)
       rack (>= 1.1, < 2.0)
     rack (1.6.4)
@@ -242,6 +246,7 @@ DEPENDENCIES
   jquery-ui-rails
   mini_magick
   pg
+  phony_rails
   puma
   rails (= 4.2.0)
   rails_12factor

@@ -44,7 +44,9 @@ gem 'puma'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-# gem 'asset_sync'
+
+# format and normalize phone numbers
+gem 'phony_rails'
 
 group :development, :test do
   gem 'better_errors'
