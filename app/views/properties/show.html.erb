@@ -1,7 +1,16 @@
 <div class="row first-row listing-shadow">
   <div class="large-offset-1 large-10 columns end">
     <% if @items.blank? %>
-      <p>Create an item or a to-do.</p>
+      <div class="row margin-bottom-large">
+        <div class="large-12 columns">
+          <h3>Create a note to track info or share to-do's.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <%= link_to 'Create a note', new_property_item_path(@property), class: "button large" %>
+        </div>
+      </div>
     <% else %>
       <% @items.each do |item| %>
         <%= render partial: 'item', locals: {item: item} %>
