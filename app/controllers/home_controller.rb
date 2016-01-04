@@ -10,7 +10,7 @@ protected
 
   def redirect_path
     user_properties = current_user.properties
-    user_properties.count > 1 ? properties_path : property_path(@property = user_properties.first)
+    user_properties.count != 1 ? properties_path : property_path(@property = user_properties.first)
   end
 
 end
