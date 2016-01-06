@@ -8,4 +8,5 @@ class Mailer < ApplicationMailer
       subject: "#{@from_user.name} addded you to their property"
     )
   end
+
 end
