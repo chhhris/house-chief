@@ -4,6 +4,6 @@ class ItemAttachment < ActiveRecord::Base
   belongs_to :item
 
   def is_image?
-    file.content_type.start_with? 'image'
+    content_type.start_with? 'image'
   end
 end

@@ -38,9 +38,9 @@
               <% file = item_attachment.file %>
               <% last_attachment = item_attachments_count == (index + 1) %>
               <div class="columns large-3 small-3 file-link <%= 'end' if last_attachment %>">
-                <a href="<%= file.url %>" type="<%= file.content_type %>" taget="_blank">
+                <a href="<%= file.url %>" type="<%= file.content_type %>" target="_blank">
                   <%= render partial: 'shared/image', locals: { item_attachment: item_attachment, thumb: false } %>
-                  <% unless file.content_type.start_with?('image').present? %>
+                  <% unless item_attachment.is_image? %>
                     <br><span class="download-label">Click to download</span>
                   <% end %>
                   <br><%= file.filename || file.file.filename %>
