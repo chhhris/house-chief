@@ -2,18 +2,17 @@
 
 class AttachmentUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::MiniMagick
   include CarrierWave::MimeTypes
+  include CarrierWave::MiniMagick
 
   IMAGE_TYPES = %w( png jpg jpeg svt )
 
   process :set_content_type
+  process :set_content_type_on_model
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
   storage :fog
-
-  process resize_to_fit: [800, 800], if: :image?
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
@@ -29,6 +28,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb, if: :image? do
+    process :set_content_type
     process resize_to_fit: [50, 50]
   end
 
@@ -36,6 +36,10 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_white_list
     %w(jpg jpeg gif png doc docx pdf xls xlsx)
+  end
+
+  def set_content_type_on_model
+    model.content_type = file.content_type if file.content_type
   end
 
 protected

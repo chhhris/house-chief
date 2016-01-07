@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.save
         process_attachments
-        format.html { redirect_to @property, notice: "#{@item.name} was successfully created." }
+        format.html { redirect_to @item, notice: "#{@item.name} was successfully created." }
         format.json { render :show, status: :created, location: @property }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         process_attachments
-        format.html { redirect_to @property, notice: "#{@item.name} was successfully updated." }
+        format.html { redirect_to @item, notice: "#{@item.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @property }
       else
         format.html { render :edit }
