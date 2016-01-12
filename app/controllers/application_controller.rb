@@ -6,14 +6,8 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def default_url_options
-    { host: Rails.env.production? ? 'www.housechief.com' : 'localhost' }
+    { host: default_host }
   end
-
-  def mailer_set_url_options
-    ActionMailer::Base.default_url_options[:host] = 'localhost:3000'
-  end
-
-
 
 protected
 
@@ -25,6 +19,10 @@ protected
     resource    = params[:controller].classify.underscore.downcase.to_sym
     property_id = params.key?(:property_id) ? params[:property_id] : params[resource][:property_id]
     @property   = Property.find(property_id)
+  end
+
+  def default_host
+    Rails.env.production? ? 'www.housechief.com' : 'localhost:5050'
   end
 
 end
