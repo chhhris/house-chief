@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize_user!, except: [:new, :create, :index]
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   # GET /properties
@@ -66,16 +67,22 @@ class PropertiesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_property
-      if @property.blank? || @property.id != params[:id]
-        @property = Property.find(params[:id])
-      end
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_property
+    if @property.blank? || @property.id != params[:id]
+      @property = Property.find(params[:id])
     end
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def property_params
-      params.require(:property).permit(:name, :address)
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def property_params
+    params.require(:property).permit(:name, :address)
+  end
+
+  def authorize_user!
+    if @property.present? && current_user.properties.pluck(:id).exclude? @property.id
+      redirect_to properties_path
     end
+  end
 end
