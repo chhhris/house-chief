@@ -1,19 +1,29 @@
-<h2>Forgot your password?</h2>
+<% content_for :title, "House Chief | Forgot Pwd" %>
+<div class="row">
+  <div class="columns large-12">
+    <h2>Forgot your password?</h2>
+  </div>
+</div>
 
 <div class="row">
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= devise_error_messages! %>
+  <div class="columns large-12">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="row">
+        <div class="columns large-6 large-offset-3 end">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+        <div class="columns large-6 large-offset-3 end">
+          <%= f.submit "Request a new password", class: "button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Request a new password", class: "button" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-
+<div class="row">
+  <div class="columns large-12 margin-bottom-large">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
