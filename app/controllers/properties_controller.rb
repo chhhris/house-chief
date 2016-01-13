@@ -81,7 +81,7 @@ private
   end
 
   def authorize_user!
-    if @property.present? && current_user.properties.pluck(:id).exclude? @property.id
+    if @property && current_user.properties.pluck(:id).exclude?(@property.id)
       redirect_to properties_path
     end
   end
