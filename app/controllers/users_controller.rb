@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def create
     @user           = User.find_or_initialize_by(user_params)
     @user.password  = SecureRandom.hex(10) unless @user.encrypted_password?
-    Mailer.invitation(@user, current_user).deliver_now
+    # Mailer.invitation(@user, current_user).deliver_now
 
     respond_to do |format|
       if @user.save
