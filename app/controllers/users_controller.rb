@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         format.html { redirect_to property_users_path(@property), notice: "#{@user.name} was successfully invited." }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { redirect_to property_users_path(@property), alert: "There was a problem creating #{user_params[:email]}." }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
