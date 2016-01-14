@@ -1,6 +1,19 @@
 Rails.application.configure do
 
-  config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.delivery_method = :letter_opener
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: ENV['MAILER_ADDRESS'],
+    port: 587,
+    domain: ENV['MAILER_DOMAIN'],
+    authentication: :login,
+    enable_starttls_auto: true,
+    enable_starttls_auto: true,
+    user_name: ENV['MAILER_USERNAME'],
+    password: ENV['MAILER_PASSWORD']
+  }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
