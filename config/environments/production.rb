@@ -75,7 +75,6 @@ Rails.application.configure do
     domain: ENV['MAILER_DOMAIN'],
     authentication: "plain",
     enable_starttls_auto: true,
-    enable_starttls_auto: true,
     user_name: ENV['MAILER_USERNAME'],
     password: ENV['MAILER_PASSWORD']
   }
