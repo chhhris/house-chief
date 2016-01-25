@@ -27,6 +27,30 @@ body {
   background-repeat: repeat;
 }
 
+
+input[type='text'], input[type='email'], input[type='password'] {
+  height: 5rem !important;
+  font-size: 2rem !important;
+}
+
+input[type='file'] {
+  font-size: 1.2rem !important;
+}
+
+textarea {
+  height: 5rem !important;
+  font-size: 1.5rem !important;
+}
+
+select {
+  height: 3rem !important;
+}
+
+.form-padding-large {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
 #item_notes {
   height: 125px;
 }
