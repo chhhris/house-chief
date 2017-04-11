@@ -6,6 +6,18 @@ class HomeController < ApplicationController
     end
   end
 
+  def privacy
+    render :privacy
+  end
+
+  def tos
+    render :tos
+  end
+
+  def about
+    render :about
+  end
+
 protected
 
   def redirect_path

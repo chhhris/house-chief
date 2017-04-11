@@ -1,14 +1,19 @@
 <footer>
   <div class="footer-content">
-    <ul class="inline-list right">
-      <% if @property && @property.persisted? %>
-        <li><%= link_to 'New note', new_property_item_path(@property) %></li>
-        <li><%= link_to 'Property settings', edit_property_path(@property) %></li>
-      <% else %>
-        <li>© HouseChief 2016</li>
-        <li>About<%# link_to 'New note', new_property_item_path(@property) %></li>
-        <li>Contact<%# link_to 'Edit this page', edit_property_path(@property) %></li>
-      <% end %>
-    </ul>
+    <div class="row">
+      <div class="columns small-12 end">
+        <ul class="inline-list right">
+          <% if @property && @property.persisted? %>
+            <li><%= link_to 'New note', new_property_item_path(@property) %></li>
+            <li><%= link_to 'Property settings', edit_property_path(@property) %></li>
+          <% else %>
+            <li>© HouseChief <%= Time.now.strftime('%Y') %></li>
+            <li><%= link_to 'About', about_path %></li>
+            <li><%= link_to 'Privacy Policy', privacy_path %></li>
+            <li><%= link_to 'Terms of Service', terms_of_service_path %></li>
+          <% end %>
+      </div>
+      </ul>
+    </div>
   </div>
 </footer>
